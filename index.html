@@ -1,25 +1,24 @@
-
-<div id="miniexca-listing">
+<div id="typhon-listing">
 <style>
-  #miniexca-listing, #miniexca-listing * { box-sizing: border-box; }
-  #miniexca-listing {
+  #typhon-listing, #typhon-listing * { box-sizing: border-box; }
+  #typhon-listing {
     margin: 0;
     padding: 0;
     background-color: #f1f5f9;
-    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   }
 
   /* ---------------- NAV ---------------- */
-  #miniexca-listing .nav-wrapper-section {
+  #typhon-listing .nav-wrapper-section {
     background-color: #ffffff;
     width: 100%;
   }
-  #miniexca-listing .nav-container-limiter {
+  #typhon-listing .nav-container-limiter {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
   }
-  #miniexca-listing .vlc-navbar {
+  #typhon-listing .vlc-navbar {
     background-color: rgba(255, 255, 255, 0.98);
     border-bottom: 1px solid #e2e8f0;
     padding: 16px 24px;
@@ -30,16 +29,18 @@
     gap: 12px 24px;
     width: 100%;
   }
-  #miniexca-listing .nav-brand {
+  #typhon-listing .nav-brand {
     font-size: 1.6rem;
     font-weight: 800;
     letter-spacing: 1.5px;
   }
-#miniexca-listing .txt-grad-cyan {
-  color: #15803d;
+#typhon-listing .txt-grad-cyan {
+  /* Safely replaced webkit-clip with a solid, high-visibility deep cyan */
+  color: #0891b2;
   font-weight: bold;
 }
-  #miniexca-listing .nav-links {
+  /* Links wrap naturally on small screens — no toggle/JS needed */
+  #typhon-listing .nav-links {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 22px;
@@ -47,7 +48,7 @@
     justify-content: center;
     flex: 1 1 auto;
   }
-  #miniexca-listing .nav-links a {
+  #typhon-listing .nav-links a {
     color: #334155;
     text-decoration: none;
     font-size: 0.85rem;
@@ -56,38 +57,38 @@
     letter-spacing: 0.5px;
     padding: 6px 0;
   }
-  #miniexca-listing .nav-links a:hover { color: #15803d; }
+  #typhon-listing .nav-links a:hover { color: #0891b2; }
 
   /* ---------------- HOME / HERO SLIDER ---------------- */
-  #miniexca-listing .home-section {
+  #typhon-listing .home-section {
     background-color: #ffffff;
     padding: 50px 20px;
     overflow: hidden;
     width: 100%;
     border-bottom: 1px solid #e2e8f0;
   }
-  #miniexca-listing .home-slider-container {
+  #typhon-listing .home-slider-container {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
     width: 100%;
   }
-  #miniexca-listing .slider-viewport {
+  #typhon-listing .slider-viewport {
     width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
-  #miniexca-listing .slider-track {
+  #typhon-listing .slider-track {
     display: flex;
     width: 600%;
     animation: typhonAutoScroll 24s cubic-bezier(0.25, 1, 0.5, 1) infinite;
   }
-  #miniexca-listing .slider-track:hover,
-  #miniexca-listing .slider-track:hover .slide-text,
-  #miniexca-listing .slider-track:hover .product-img-aspect img {
+  #typhon-listing .slider-track:hover,
+  #typhon-listing .slider-track:hover .slide-text,
+  #typhon-listing .slider-track:hover .product-img-aspect img {
     animation-play-state: paused;
   }
-  #miniexca-listing .slide-unit {
+  #typhon-listing .slide-unit {
     flex: 0 0 16.6666%;
     width: 16.6666%;
     scroll-snap-align: start;
@@ -97,14 +98,14 @@
     padding: 40px;
     gap: 40px;
   }
-  #miniexca-listing .slide-text {
+  #typhon-listing .slide-text {
     flex: 1;
     color: #1e293b;
     max-width: 550px;
     opacity: 0;
     animation: typhonTextEntrance 24s ease-in-out infinite;
   }
-  #miniexca-listing .slide-text h2 {
+  #typhon-listing .slide-text h2 {
     font-size: 2.4rem;
     font-weight: 800;
     margin: 0 0 15px 0;
@@ -112,32 +113,33 @@
     line-height: 1.2;
     text-transform: uppercase;
   }
-#miniexca-listing .txt-grad-orange {
-  color: #b45309;
-  font-weight: bold;
+#typhon-listing .txt-grad-orange {
+  /* Removed background-clip and transparent fill to prevent eBay preview errors */
+  color: #ea580c; 
+  font-weight: bold; /* Keeps the text prominent and sharp */
 }
-  #miniexca-listing .slide-text p {
+  #typhon-listing .slide-text p {
     font-size: 1.05rem;
     line-height: 1.6;
     color: #475569;
     margin: 0 0 30px 0;
   }
-  #miniexca-listing .home-btn,
-  #miniexca-listing .home-btn a {
+  #typhon-listing .home-btn,
+  #typhon-listing .home-btn a {
     display: inline-block;
     padding: 12px 30px;
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 8px;
+    border-radius: 50px;
     text-decoration: none;
   }
-  #miniexca-listing .home-btn { background: linear-gradient(135deg, #22c55e, #15803d); color: #ffffff; }
-  #miniexca-listing .home-btn.orange-btn { background: linear-gradient(135deg, #f59e0b, #b45309); color: #ffffff; }
-  #miniexca-listing .slide-img-frame { flex: 1; display: flex; justify-content: center; align-items: center; }
-  #miniexca-listing .product-img-aspect { width: 100%; max-width: 480px; position: relative; }
-  #miniexca-listing .product-img-aspect img {
+  #typhon-listing .home-btn { background: linear-gradient(135deg, #06b6d4, #0891b2); color: #ffffff; }
+  #typhon-listing .home-btn.orange-btn { background: linear-gradient(135deg, #f97316, #ea580c); color: #ffffff; }
+  #typhon-listing .slide-img-frame { flex: 1; display: flex; justify-content: center; align-items: center; }
+  #typhon-listing .product-img-aspect { width: 100%; max-width: 480px; position: relative; }
+  #typhon-listing .product-img-aspect img {
     width: 100%;
     height: auto;
     max-height: 480px;
@@ -174,16 +176,16 @@
   }
 
   @media (max-width: 1024px) {
-    #miniexca-listing .slide-unit { padding: 30px 15px; gap: 25px; }
-    #miniexca-listing .slide-text h2 { font-size: 1.9rem; }
+    #typhon-listing .slide-unit { padding: 30px 15px; gap: 25px; }
+    #typhon-listing .slide-text h2 { font-size: 1.9rem; }
   }
   @media (max-width: 768px) {
-    #miniexca-listing .home-section { padding: 35px 10px; }
-    #miniexca-listing .slide-unit { flex-direction: column-reverse; text-align: center; gap: 20px; }
-    #miniexca-listing .slide-text h2 { font-size: 1.55rem; }
-    #miniexca-listing .product-img-aspect { max-width: 270px; }
-    #miniexca-listing .product-img-aspect img { max-height: 220px; }
-    #miniexca-listing .home-btn, #miniexca-listing .home-btn a { width: 85%; }
+    #typhon-listing .home-section { padding: 35px 10px; }
+    #typhon-listing .slide-unit { flex-direction: column-reverse; text-align: center; gap: 20px; }
+    #typhon-listing .slide-text h2 { font-size: 1.55rem; }
+    #typhon-listing .product-img-aspect { max-width: 270px; }
+    #typhon-listing .product-img-aspect img { max-height: 220px; }
+    #typhon-listing .home-btn, #typhon-listing .home-btn a { width: 85%; }
     @keyframes typhonTextEntrance {
       0%,16.66%,33.33%,50%,66.66%,83.33% { opacity:0; transform: translateY(20px); }
       2%,13.33%,18.66%,30%,35.33%,46.66%,52%,63.33%,68.66%,80%,85.33%,96.66% { opacity:1; transform: translateY(0); }
@@ -197,12 +199,15 @@
   }
 
   /* ---------------- SPECS ---------------- */
+/* --- SPECIFICATIONS SECTION UNIQUE LOOK --- */
+/* --- SPECIFICATIONS SECTION UNIQUE LOOK --- */
 .specific-section {
     padding: 40px 15px;
     background-color: #ffffff;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
+
 .specific-main-title {
     font-size: 2rem;
     color: #0f172a;
@@ -213,20 +218,23 @@
     margin-bottom: 40px;
     position: relative;
 }
+
 .specific-main-title::after {
     content: '';
     display: block;
     width: 80px;
     height: 4px;
-    background-color: #f59e0b;
+    background-color: #f59e0b; /* Typhon Machinery Signature Yellow-Gold */
     margin: 12px auto 0 auto;
     border-radius: 2px;
 }
+
+/* Master Grid Card Layout Wrapper */
 .specific-wrapper-card {
-    max-width: 1160px;
+    max-width: 1200px; /* Slightly wider to easily accommodate multi-column specs */
     margin: 0 auto;
     background-color: #ffffff;
-    border-top: 5px solid #14532d;
+    border-top: 5px solid #0f172a; /* Strong mechanical headline bar */
     border-left: 1px solid #e2e8f0;
     border-right: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
@@ -234,14 +242,18 @@
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
     overflow: hidden;
 }
+
 .specific-body-layout {
     display: flex;
     flex-direction: row;
     align-items: stretch;
 }
+
+/* Showcase Block (Left Side Image Frame) */
 .specific-showcase-box {
     flex: 1;
-    background-color: #f8fafc;
+    max-width: 400px; /* Prevents image column from taking too much space away from 20+ specs */
+    background-color: #f8fafc; /* Sleek technical off-white background */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -249,84 +261,136 @@
     position: relative;
     border-right: 1px solid #e2e8f0;
 }
+
 .specific-img-placeholder {
     width: 100%;
     display: flex;
     justify-content: center;
+    position: sticky; /* Keeps the image in view if the 20+ spec list gets very long */
+    top: 20px;
 }
+
 .specific-img-placeholder img {
     max-width: 100%;
-    max-height: 420px;
+    max-height: 380px;
     object-fit: contain;
     filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
 }
+
+/* Technical Metrics Grid Block (Right Side) */
 .specific-table-grid {
-    flex: 1.4;
-    padding: 40px;
+    flex: 2; /* Gives more proportional weight to the data side */
+    padding: 30px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px 24px;
+    /* Auto-fit dynamically creates columns based on available space */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+    gap: 8px 24px; /* Tighter gap for massive data lists */
     background-color: #ffffff;
-    align-content: center;
+    align-content: start;
 }
+
+/* Individual Specification Rows */
 .specific-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 6px;
-    border-bottom: 1px dashed #cbd5e1;
+    padding: 8px 4px; /* Tighter vertical padding for density */
+    border-bottom: 1px dashed #cbd5e1; /* Blueprint style layout dividers */
     box-sizing: border-box;
 }
+
 .specific-spec-label {
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* Slightly smaller for a cleaner, high-density dashboard look */
     color: #64748b;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    padding-right: 10px;
 }
+
 .specific-spec-val {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Clean, compact and modern scale */
     color: #0f172a;
     font-weight: 800;
     text-align: right;
 }
+
+/* Unique Luxury Accent Highlight Badge for specific terms (e.g., Brand New) */
 .specific-spec-val.specific-spec-highlight {
-    background-color: #15803d;
+    background-color: #f59e0b;
     color: #ffffff;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(21, 128, 61, 0.25);
-}
-@media (max-width: 992px) {
-    .specific-body-layout { flex-direction: column; }
-    .specific-showcase-box { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 40px 20px; }
-    .specific-showcase-box img { max-height: 300px; }
-}
-@media (max-width: 640px) {
-    .specific-main-title { font-size: 1.6rem; }
-    .specific-table-grid { grid-template-columns: 1fr; padding: 24px 16px; gap: 4px; }
-    .specific-row { padding: 14px 4px; }
-    .specific-spec-label { font-size: 0.8rem; }
-    .specific-spec-val { font-size: 0.95rem; }
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
 }
 
-  /* =========================================================================
-     TYPHON MACHINERY — HORIZONTAL 30-SLIDE INTERACTIVE ENGINE (FIXED SYNC)
-     Thumbnail pages are now driven by the SAME #slide-N anchors used by the
-     main viewport arrows, grouped into three 10-image ranges. This means
-     jumping via the big prev/next arrows on the main image, OR via a
-     thumbnail click, always keeps both panels on the correct page — no
-     more falling back to page 1.
-     ========================================================================= */
+/* =========================================================================
+   STRICT MOBILE COMPATIBILITY FILTERS (Responsive Core Breakpoints)
+   ========================================================================= */
+@media (max-width: 992px) {
+    .specific-body-layout {
+        flex-direction: column; /* Stack image showcase directly above datasheet on tablets */
+    }
+    
+    .specific-showcase-box {
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 30px 20px;
+    }
+    
+    .specific-showcase-box img {
+        max-height: 260px;
+    }
+    
+    .specific-img-placeholder {
+        position: static; /* Disable sticky tracking on stacked screens */
+    }
+}
+
+@media (max-width: 640px) {
+    .specific-main-title {
+        font-size: 1.5rem;
+    }
+    
+    .specific-table-grid {
+        grid-template-columns: 1fr; /* Force table entries into one structural column on mobile */
+        padding: 20px 15px;
+        gap: 2px;
+    }
+    
+    .specific-row {
+        padding: 10px 2px; 
+    }
+    
+    .specific-spec-label {
+        font-size: 0.75rem;
+    }
+    
+    .specific-spec-val {
+        font-size: 0.85rem;
+    }
+}
+
+ /* =========================================================================
+   TYPHON MACHINERY — LEGACY COMPATIBLE PURE CSS ENGINE (NO JUMPING)
+   ========================================================================= */
 .premium-gallery-section {
     padding: 35px 20px;
     background-color: #ffffff;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
+
+/* Hide Radio Inputs completely from interface */
+.slide-state-ctrl, .page-state-ctrl {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 .gallery-container {
     display: flex;
     flex-direction: column;
@@ -334,40 +398,67 @@
     margin: 0 auto;
     gap: 20px;
 }
+
+/* --- MAIN DISPLAY VIEWPORT --- */
 .main-viewport-wrapper {
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
-    background-color: #f1f5f9;
-    border-top: 5px solid #14532d;
+    background-color: #f1f5f9; 
+    border-top: 5px solid #0f172a; 
     border-left: 1px solid #cbd5e1;
     border-right: 1px solid #cbd5e1;
     border-bottom: 1px solid #cbd5e1;
     border-radius: 8px 8px 16px 16px;
     overflow: hidden;
-    display: flex;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
     box-shadow: inset 0 4px 12px rgba(15, 23, 42, 0.04), 0 10px 25px -5px rgba(0, 0, 0, 0.05);
 }
+
+/* Absolute Positioning Stack Rule */
 .gallery-slide {
-    position: relative;
-    flex: 0 0 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px 30px 30px 30px;
     box-sizing: border-box;
-    scroll-snap-align: start;
+    transition: opacity 0.2s ease-in-out;
 }
+
+/* --- TRADITIONAL CSS SIBLING SELECTORS FOR SLIDE VISIBILITY --- */
+#s-1:checked ~ .gallery-container .s-1-view, #s-2:checked ~ .gallery-container .s-2-view,
+#s-3:checked ~ .gallery-container .s-3-view, #s-4:checked ~ .gallery-container .s-4-view,
+#s-5:checked ~ .gallery-container .s-5-view, #s-6:checked ~ .gallery-container .s-6-view,
+#s-7:checked ~ .gallery-container .s-7-view, #s-8:checked ~ .gallery-container .s-8-view,
+#s-9:checked ~ .gallery-container .s-9-view, #s-10:checked ~ .gallery-container .s-10-view,
+#s-11:checked ~ .gallery-container .s-11-view, #s-12:checked ~ .gallery-container .s-12-view,
+#s-13:checked ~ .gallery-container .s-13-view, #s-14:checked ~ .gallery-container .s-14-view,
+#s-15:checked ~ .gallery-container .s-15-view, #s-16:checked ~ .gallery-container .s-16-view,
+#s-17:checked ~ .gallery-container .s-17-view, #s-18:checked ~ .gallery-container .s-18-view,
+#s-19:checked ~ .gallery-container .s-19-view, #s-20:checked ~ .gallery-container .s-20-view,
+#s-21:checked ~ .gallery-container .s-21-view, #s-22:checked ~ .gallery-container .s-22-view,
+#s-23:checked ~ .gallery-container .s-23-view, #s-24:checked ~ .gallery-container .s-24-view,
+#s-25:checked ~ .gallery-container .s-25-view, #s-26:checked ~ .gallery-container .s-26-view,
+#s-27:checked ~ .gallery-container .s-27-view, #s-28:checked ~ .gallery-container .s-28-view,
+#s-29:checked ~ .gallery-container .s-29-view, #s-30:checked ~ .gallery-container .s-30-view {
+    opacity: 1;
+    z-index: 5;
+}
+
 .gallery-slide img {
     max-width: 95%;
     max-height: 95%;
     object-fit: contain;
-    filter: drop-shadow(0 12px 20px rgba(15, 23, 42, 0.09));
+    filter: drop-shadow(0 12px 20px rgba(15, 23, 42, 0.09)); 
 }
+
+/* --- VIEWPORT CONTROLS PAD --- */
 .control-pad {
     position: absolute;
     top: 20px;
@@ -382,123 +473,108 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     z-index: 10;
 }
-.slide-indicator { font-size: 12px; font-weight: bold; color: #64748b; letter-spacing: 1px; }
-.nav-arrow { color: #0f172a; text-decoration: none; font-size: 14px; font-weight: bold; transition: color 0.15s ease; }
-.nav-arrow:hover { color: #16a34a; }
 
+.slide-indicator {
+    font-size: 12px;
+    font-weight: bold;
+    color: #64748b;
+    letter-spacing: 1px;
+}
+
+.nav-arrow {
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.nav-arrow:hover {
+    color: #f59e0b; 
+}
+
+/* =========================================================================
+   THUMBNAIL MENU GRID TRACK (10 IMAGES PER PAGE)
+   ========================================================================= */
 .thumbnail-panel-outer {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
     width: 100%;
-    box-sizing: border-box;
 }
+
 .btn-left-wrapper, .btn-right-wrapper {
     display: inline-flex;
     position: relative;
-    width: 40px;
-    height: 84px;
+    width: 36px;
+    height: 74px;
+    flex-shrink: 0;
 }
+
 .panel-nav-btn {
     display: none;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 84px;
+    width: 36px;
+    height: 74px;
     background-color: #f1f5f9;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     color: #0f172a;
-    text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
+    cursor: pointer;
     transition: all 0.2s ease;
-    flex-shrink: 0;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 5;
 }
-.panel-nav-btn:hover { background-color: #0f172a; color: #ffffff; border-color: #0f172a; }
 
-/* --- STATE LOGIC ENGINE (10 Image per view matrix) --- */
-/* --- STATE LOGIC ENGINE --- */
-        .thumbnail-panel-outer #thumb-page-1 { display: flex; }
-        .thumbnail-panel-outer #thumb-page-2,
-        .thumbnail-panel-outer #thumb-page-3 { display: none; }
+.panel-nav-btn:hover {
+    background-color: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+}
 
-        #prev-to-p1, #prev-to-p2, #next-to-p2, #next-to-p3, #next-to-final { display: none; }
-        #next-to-p2 { display: flex; } 
+/* --- MENU PAGE CONDITION SIBLINGS (CHANNELS P1, P2, P3) --- */
 
-        /* Page 1 Dynamic Termination */
-        #miniexca-listing:has(#slide-11:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-12:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-13:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-14:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-15:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-16:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-17:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-18:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-19:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-20:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-1,
-        #miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-1 { display: none; }
+/* Page 1 Selected Layouts */
+#p-1:checked ~ .gallery-container .page-ctrl-next-to-p2 { display: flex; }
+#p-1:checked ~ .gallery-container .p-1-pane { display: flex; }
+#p-1:checked ~ .gallery-container .p-2-pane, #p-1:checked ~ .gallery-container .p-3-pane { display: none; }
 
-        /* Page 2 Mechanics */
-        #miniexca-listing:has(#slide-11:target) .thumbnail-panel-outer #thumb-page-2,
-        #miniexca-listing:has(#slide-12:target) .thumbnail-panel-outer #thumb-page-2,
-        #miniexca-listing:has(#slide-13:target) .thumbnail-panel-outer #thumb-page-2,
-        #miniexca-listing:has(#slide-14:target) .thumbnail-panel-outer #thumb-page-2,
-        #miniexca-listing:has(#slide-15:target) .thumbnail-panel-outer #thumb-page-2,
-        #miniexca-listing:has(#slide-16:target) .thumbnail-panel-outer #thumb-page-2,
-        #miniexca-listing:has(#slide-17:target) .thumbnail-panel-outer #thumb-page-2,
-        #miniexca-listing:has(#slide-18:target) .thumbnail-panel-outer #thumb-page-2,
-        #miniexca-listing:has(#slide-19:target) .thumbnail-panel-outer #thumb-page-2,
-        #miniexca-listing:has(#slide-20:target) .thumbnail-panel-outer #thumb-page-2 { display: flex; }
+/* Page 2 Selected Layouts */
+#p-2:checked ~ .gallery-container .page-ctrl-prev-to-p1 { display: flex; }
+#p-2:checked ~ .gallery-container .page-ctrl-next-to-p3 { display: flex; }
+#p-2:checked ~ .gallery-container .p-2-pane { display: flex; }
+#p-2:checked ~ .gallery-container .p-1-pane, #p-2:checked ~ .gallery-container .p-3-pane { display: none; }
 
-        #miniexca-listing:has(#slide-11:target) #next-to-p2, #miniexca-listing:has(#slide-12:target) #next-to-p2, #miniexca-listing:has(#slide-13:target) #next-to-p2, #miniexca-listing:has(#slide-14:target) #next-to-p2, #miniexca-listing:has(#slide-15:target) #next-to-p2, #miniexca-listing:has(#slide-16:target) #next-to-p2, #miniexca-listing:has(#slide-17:target) #next-to-p2, #miniexca-listing:has(#slide-18:target) #next-to-p2, #miniexca-listing:has(#slide-19:target) #next-to-p2, #miniexca-listing:has(#slide-20:target) #next-to-p2 { display: none; }
-        #miniexca-listing:has(#slide-11:target) #prev-to-p1, #miniexca-listing:has(#slide-11:target) #next-to-p3, #miniexca-listing:has(#slide-12:target) #prev-to-p1, #miniexca-listing:has(#slide-12:target) #next-to-p3, #miniexca-listing:has(#slide-13:target) #prev-to-p1, #miniexca-listing:has(#slide-13:target) #next-to-p3, #miniexca-listing:has(#slide-14:target) #prev-to-p1, #miniexca-listing:has(#slide-14:target) #next-to-p3, #miniexca-listing:has(#slide-15:target) #prev-to-p1, #miniexca-listing:has(#slide-15:target) #next-to-p3, #miniexca-listing:has(#slide-16:target) #prev-to-p1, #miniexca-listing:has(#slide-16:target) #next-to-p3, #miniexca-listing:has(#slide-17:target) #prev-to-p1, #miniexca-listing:has(#slide-17:target) #next-to-p3, #miniexca-listing:has(#slide-18:target) #prev-to-p1, #miniexca-listing:has(#slide-18:target) #next-to-p3, #miniexca-listing:has(#slide-19:target) #prev-to-p1, #miniexca-listing:has(#slide-19:target) #next-to-p3, #miniexca-listing:has(#slide-20:target) #prev-to-p1, #miniexca-listing:has(#slide-20:target) #next-to-p3 { display: flex; }
+/* Page 3 Selected Layouts */
+#p-3:checked ~ .gallery-container .page-ctrl-prev-to-p2 { display: flex; }
+#p-3:checked ~ .gallery-container .p-3-pane { display: flex; }
+#p-3:checked ~ .gallery-container .p-1-pane, #p-3:checked ~ .gallery-container .p-2-pane { display: none; }
 
-        /* Page 3 Mechanics (Left arrow works, right arrow is forced completely hidden for all slides 21-30) */
-        #miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-3,
-        #miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-3,
-        #miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-3,
-        #miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-3,
-        #miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-3,
-        #miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-3,
-        #miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-3,
-        #miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-3,
-        #miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-3,
-        #miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-3 { display: flex; }
-
-        #miniexca-listing:has(#slide-21:target) #prev-to-p2, #miniexca-listing:has(#slide-22:target) #prev-to-p2, #miniexca-listing:has(#slide-23:target) #prev-to-p2, #miniexca-listing:has(#slide-24:target) #prev-to-p2, #miniexca-listing:has(#slide-25:target) #prev-to-p2, #miniexca-listing:has(#slide-26:target) #prev-to-p2, #miniexca-listing:has(#slide-27:target) #prev-to-p2, #miniexca-listing:has(#slide-28:target) #prev-to-p2, #miniexca-listing:has(#slide-29:target) #prev-to-p2, #miniexca-listing:has(#slide-30:target) #prev-to-p2 { display: flex; }
-        
-        #miniexca-listing:has(#slide-21:target) .btn-right-wrapper, #miniexca-listing:has(#slide-22:target) .btn-right-wrapper, #miniexca-listing:has(#slide-23:target) .btn-right-wrapper, #miniexca-listing:has(#slide-24:target) .btn-right-wrapper, #miniexca-listing:has(#slide-25:target) .btn-right-wrapper, #miniexca-listing:has(#slide-26:target) .btn-right-wrapper, #miniexca-listing:has(#slide-27:target) .btn-right-wrapper, #miniexca-listing:has(#slide-28:target) .btn-right-wrapper, #miniexca-listing:has(#slide-29:target) .btn-right-wrapper, #miniexca-listing:has(#slide-30:target) .btn-right-wrapper { display: none !important; }
-
+/* Viewport Track Layer */
 .thumbnail-scroller-track {
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
     flex: 1;
-    gap: 15px;
 }
+
+/* Horizontal Row Split Container */
 .thumb-group-page {
     display: flex;
     flex-direction: row;
-    gap: 8px;
-    flex: 0 0 100%;
+    gap: 6px;
+    width: 100%;
+    flex-shrink: 0;
     justify-content: space-between;
 }
+
+/* Preview Thumbnails Styles */
 .thumb-link {
     display: flex;
     align-items: center;
@@ -507,159 +583,215 @@
     border-top: 1px solid #e2e8f0;
     border-right: 1px solid #e2e8f0;
     border-left: 1px solid #e2e8f0;
-    border-bottom: 5px solid #94a3b8;
+    border-bottom: 4px solid #94a3b8;
     border-radius: 6px 6px 4px 4px;
-    padding: 8px;
-    height: 84px;
+    padding: 6px;
+    height: 74px;
     flex: 1;
-    min-width: 60px;
+    min-width: 0;
     box-sizing: border-box;
+    cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.thumb-link:hover { border-bottom-color: #16a34a; background-color: #fafafa; transform: translateY(-5px); }
-.thumb-link img { max-width: 100%; max-height: 100%; object-fit: contain; opacity: 0.85; }
-.thumb-link:hover img { opacity: 1; }
 
+.thumb-link:hover {
+    border-bottom-color: #f59e0b;
+    background-color: #fafafa;
+    transform: translateY(-4px);
+}
+
+.thumb-link img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+.thumb-link:hover img {
+    opacity: 1;
+}
+
+/* =========================================================================
+   RESPONSIVE COMPATIBILITY MATRIX
+   ========================================================================= */
 @media (max-width: 768px) {
-    .premium-gallery-section { padding: 15px 10px; }
-    .btn-left-wrapper, .btn-right-wrapper, .panel-nav-btn { width: 32px; height: 64px; font-size: 14px; }
-    .thumbnail-scroller-track { height: 68px; }
-    .thumb-link { height: 64px; padding: 4px; }
+    .premium-gallery-section {
+        padding: 15px 10px;
+    }
+    .btn-left-wrapper, .btn-right-wrapper, .panel-nav-btn {
+        width: 28px;
+        height: 60px;
+        font-size: 13px;
+    }
+    .thumb-link {
+        height: 60px;
+        padding: 4px;
+    }
 }
 
   /* ---------------- FEATURES ---------------- */
-  #miniexca-listing .vlc-features-section { padding: 60px 20px; width: 100%; }
-  #miniexca-listing .features-main-title {
+  #typhon-listing .vlc-features-section {
+    padding: 60px 20px;
+    width: 100%;
+  }
+  #typhon-listing .features-main-title {
     font-size: 2.4rem; font-weight: 900; text-align: center; margin: 0 auto 45px auto;
     text-transform: uppercase; letter-spacing: 1.5px; max-width: 1200px;
     display: flex; flex-direction: column; align-items: center; gap: 12px;
   }
-#miniexca-listing .features-txt-grad-title { color: #14532d; font-weight: bold; }
-  #miniexca-listing .features-main-title::after {
+#typhon-listing .features-txt-grad-title {
+  /* Cleaned to ensure stability inside eBay's description sandboxes */
+  color: #312e81;
+  font-weight: bold;
+}
+  #typhon-listing .features-main-title::after {
     content: ''; display: block; width: 80px; height: 4px; border-radius: 10px;
-    background: linear-gradient(90deg, #15803d, #f59e0b);
+    background: linear-gradient(90deg, #4f46e5, #06b6d4);
   }
-  #miniexca-listing .features-stack-container { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; width: 100%; }
-  #miniexca-listing .feat-row-card {
+  #typhon-listing .features-stack-container { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; width: 100%; }
+  #typhon-listing .feat-row-card {
     background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px 30px;
     box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01); display: flex; align-items: center; gap: 35px;
   }
-  #miniexca-listing .feat-left-block { display: flex; align-items: center; gap: 18px; flex: 0 0 280px; }
-  #miniexca-listing .feat-right-block { flex: 1; border-left: 2px solid #f1f5f9; padding-left: 30px; }
-  #miniexca-listing .feat-icon-wrapper { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  #miniexca-listing .feat-icon { font-size: 1.3rem; }
-  #miniexca-listing .feat-icon-cyan { background-color: rgba(21, 128, 61, 0.1); }
-  #miniexca-listing .feat-icon-purple { background-color: rgba(51, 65, 85, 0.1); }
-  #miniexca-listing .feat-icon-pink { background-color: rgba(154, 52, 18, 0.1); }
-  #miniexca-listing .feat-left-block h4 { font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: 0.5px; text-transform: uppercase; }
-#miniexca-listing .txt-grad-purple { color: #334155; font-weight: bold; }
-#miniexca-listing .txt-grad-pink { color: #9a3412; font-weight: bold; }
-  #miniexca-listing .feat-right-block p { color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+  #typhon-listing .feat-left-block { display: flex; align-items: center; gap: 18px; flex: 0 0 280px; }
+  #typhon-listing .feat-right-block { flex: 1; border-left: 2px solid #f1f5f9; padding-left: 30px; }
+  #typhon-listing .feat-icon-wrapper { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  #typhon-listing .feat-icon { font-size: 1.3rem; }
+  #typhon-listing .feat-icon-cyan { background-color: rgba(6, 182, 212, 0.1); }
+  #typhon-listing .feat-icon-purple { background-color: rgba(139, 92, 246, 0.1); }
+  #typhon-listing .feat-icon-pink { background-color: rgba(236, 72, 153, 0.1); }
+  #typhon-listing .feat-left-block h4 { font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: 0.5px; text-transform: uppercase; }
+#typhon-listing .txt-grad-purple {
+  /* Safely replaced webkit-clip with a solid deep violet */
+  color: #6d28d9;
+  font-weight: bold;
+}
+
+#typhon-listing .txt-grad-pink {
+  /* Safely replaced webkit-clip with a high-visibility bold pink */
+  color: #be185d;
+  font-weight: bold;
+}
+  #typhon-listing .feat-right-block p { color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0; }
 
   @media (max-width: 850px) {
-    #miniexca-listing .vlc-features-section { padding: 45px 15px; }
-    #miniexca-listing .features-main-title { font-size: 1.9rem; margin-bottom: 30px; }
-    #miniexca-listing .feat-row-card { flex-direction: column; align-items: flex-start; gap: 15px; padding: 22px; }
-    #miniexca-listing .feat-left-block { flex: none; width: 100%; }
-    #miniexca-listing .feat-right-block { border-left: none; padding-left: 0; width: 100%; }
+    #typhon-listing .vlc-features-section { padding: 45px 15px; }
+    #typhon-listing .features-main-title { font-size: 1.9rem; margin-bottom: 30px; }
+    #typhon-listing .feat-row-card { flex-direction: column; align-items: flex-start; gap: 15px; padding: 22px; }
+    #typhon-listing .feat-left-block { flex: none; width: 100%; }
+    #typhon-listing .feat-right-block { border-left: none; padding-left: 0; width: 100%; }
   }
 
   /* ---------------- RELATED ---------------- */
-  #miniexca-listing .vlc-related-section { padding: 60px 20px; width: 100%; }
-  #miniexca-listing .related-main-title {
+  #typhon-listing .vlc-related-section {
+    padding: 60px 20px; width: 100%;
+  }
+  #typhon-listing .related-main-title {
     font-size: 2.4rem; font-weight: 900; text-align: center; margin: 0 auto 45px auto;
     text-transform: uppercase; letter-spacing: 1.5px; max-width: 1200px;
     display: flex; flex-direction: column; align-items: center; gap: 12px;
   }
-#miniexca-listing .related-txt-grad-title { color: #14532d; font-weight: bold; }
-  #miniexca-listing .related-main-title::after {
+#typhon-listing .related-txt-grad-title {
+  /* Safely replaced webkit-clip with a solid deep indigo */
+  color: #312e81;
+  font-weight: bold;
+}
+  #typhon-listing .related-main-title::after {
     content: ''; display: block; width: 80px; height: 4px; border-radius: 10px;
-    background: linear-gradient(90deg, #15803d, #f59e0b);
+    background: linear-gradient(90deg, #4f46e5, #06b6d4);
   }
-  #miniexca-listing .related-products-row {
+  #typhon-listing .related-products-row {
     max-width: 1200px; margin: 0 auto; display: grid;
     grid-template-columns: repeat(4, 1fr); gap: 24px; width: 100%; padding-bottom: 15px;
   }
-  #miniexca-listing .related-product-card {
-    background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;
+  #typhon-listing .related-product-card {
+    background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden;
     display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01);
   }
-  #miniexca-listing .related-img-box {
+  #typhon-listing .related-img-box {
     background-color: #f8fafc; height: 200px; display: flex; align-items: center; justify-content: center;
     padding: 20px; border-bottom: 1px solid #f1f5f9;
   }
-  #miniexca-listing .related-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-  #miniexca-listing .related-card-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-  #miniexca-listing .related-item-title { font-size: 1.05rem; font-weight: 700; color: #1e293b; margin: 0 0 8px 0; line-height: 1.4; }
-  #miniexca-listing .related-item-desc { font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 20px 0; flex-grow: 1; }
-  #miniexca-listing .related-view-btn {
-    display: block; text-align: center; text-decoration: none; background-color: #f8fafc; color: #15803d;
+  #typhon-listing .related-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  #typhon-listing .related-card-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+  #typhon-listing .related-item-title { font-size: 1.05rem; font-weight: 700; color: #1e293b; margin: 0 0 8px 0; line-height: 1.4; }
+  #typhon-listing .related-item-desc { font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 20px 0; flex-grow: 1; }
+  #typhon-listing .related-view-btn {
+    display: block; text-align: center; text-decoration: none; background-color: #f8fafc; color: #4f46e5;
     font-size: 0.85rem; font-weight: 700; padding: 10px 16px; border: 1px solid #e2e8f0; border-radius: 8px;
     text-transform: uppercase; letter-spacing: 0.5px;
   }
-  #miniexca-listing .related-view-btn:hover {
-    background: linear-gradient(135deg, #15803d, #22c55e); color: #ffffff; border-color: transparent;
+  #typhon-listing .related-view-btn:hover {
+    background: linear-gradient(135deg, #4f46e5, #3b82f6); color: #ffffff; border-color: transparent;
   }
 
   @media (max-width: 1024px) {
-    #miniexca-listing .related-main-title { font-size: 2rem; }
-    #miniexca-listing .related-products-row { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    #typhon-listing .related-main-title { font-size: 2rem; }
+    #typhon-listing .related-products-row { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   }
   @media (max-width: 768px) {
-    #miniexca-listing .related-products-row {
+    #typhon-listing .related-products-row {
       display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-left: 4px; padding-right: 4px;
     }
-    #miniexca-listing .related-product-card { flex: 0 0 260px; scroll-snap-align: start; }
+    #typhon-listing .related-product-card { flex: 0 0 260px; scroll-snap-align: start; }
   }
   @media (max-width: 480px) {
-    #miniexca-listing .vlc-related-section { padding: 45px 10px; }
-    #miniexca-listing .related-main-title { font-size: 1.8rem; }
+    #typhon-listing .vlc-related-section { padding: 45px 10px; }
+    #typhon-listing .related-main-title { font-size: 1.8rem; }
   }
 
   /* ---------------- CONTACT / FOOTER ---------------- */
-  #miniexca-listing .vlc-contact-section { padding: 60px 20px; width: 100%; }
-  #miniexca-listing .info-panel {
+  #typhon-listing .vlc-contact-section {
+    padding: 60px 20px; width: 100%;
+  }
+  #typhon-listing .info-panel {
     max-width: 1200px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e2e8f0;
-    border-radius: 14px; padding: 45px 35px; box-shadow: 0 10px 35px rgba(15, 23, 42, 0.03); text-align: center;
+    border-radius: 24px; padding: 45px 35px; box-shadow: 0 10px 35px rgba(15, 23, 42, 0.03); text-align: center;
   }
-#miniexca-listing .contact-txt-grad-title {
-  font-size: 1.8rem; font-weight: 800; margin: 0 0 12px 0; letter-spacing: 0.5px; text-transform: uppercase;
-  color: #16a34a;
+#typhon-listing .contact-txt-grad-title {
+  font-size: 1.8rem; 
+  font-weight: 800; 
+  margin: 0 0 12px 0; 
+  letter-spacing: 0.5px; 
+  text-transform: uppercase;
+  /* Safely replaced webkit-clip with a vibrant, high-visibility brand blue */
+  color: #2563eb;
 }
-  #miniexca-listing .contact-subtitle { color: #475569; font-size: 0.95rem; line-height: 1.6; max-width: 680px; margin: 0 auto 40px auto; }
-  #miniexca-listing .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; }
-  #miniexca-listing .info-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px 20px; text-align: left; }
-  #miniexca-listing .info-box:hover { background-color: #ffffff; border-color: #15803d; }
-  #miniexca-listing .info-box-title { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px; }
-  #miniexca-listing .info-box-desc { font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0; }
+  #typhon-listing .contact-subtitle { color: #475569; font-size: 0.95rem; line-height: 1.6; max-width: 680px; margin: 0 auto 40px auto; }
+  #typhon-listing .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; }
+  #typhon-listing .info-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px 20px; text-align: left; }
+  #typhon-listing .info-box:hover { background-color: #ffffff; border-color: #06b6d4; }
+  #typhon-listing .info-box-title { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px; }
+  #typhon-listing .info-box-desc { font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0; }
 
-  #miniexca-listing .vlc-global-footer {
-    background-color: #052e16; padding: 30px 20px; text-align: center; width: 100%; border-top: 1px solid #14532d;
+  #typhon-listing .vlc-global-footer {
+    background-color: #0f172a; padding: 30px 20px; text-align: center; width: 100%; border-top: 1px solid #1e293b;
   }
-  #miniexca-listing .vlc-global-footer p { color: #94a3b8; font-size: 0.85rem; letter-spacing: 0.5px; margin: 0; line-height: 1.5; }
+  #typhon-listing .vlc-global-footer p { color: #94a3b8; font-size: 0.85rem; letter-spacing: 0.5px; margin: 0; line-height: 1.5; }
 
   @media (max-width: 900px) {
-    #miniexca-listing .info-panel { padding: 35px 20px; }
-    #miniexca-listing .contact-txt-grad-title { font-size: 1.6rem; }
-    #miniexca-listing .info-grid { gap: 16px; }
+    #typhon-listing .info-panel { padding: 35px 20px; }
+    #typhon-listing .contact-txt-grad-title { font-size: 1.6rem; }
+    #typhon-listing .info-grid { gap: 16px; }
   }
   @media (max-width: 768px) {
-    #miniexca-listing .vlc-contact-section { padding: 45px 15px; }
-    #miniexca-listing .info-grid { grid-template-columns: 1fr; gap: 16px; }
-    #miniexca-listing .info-box { padding: 20px; }
+    #typhon-listing .vlc-contact-section { padding: 45px 15px; }
+    #typhon-listing .info-grid { grid-template-columns: 1fr; gap: 16px; }
+    #typhon-listing .info-box { padding: 20px; }
   }
+  
 </style>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR (no hamburger / no checkbox — links wrap responsively) -->
   <section class="nav-wrapper-section">
     <div class="nav-container-limiter">
       <nav class="vlc-navbar">
         <div class="nav-brand"><span class="txt-grad-cyan">MACHINERY.BARGAINS</span></div>
         <div class="nav-links">
           <a href="https://www.ebay.com/str/machinerybargains" target="_blank" rel="noopener noreferrer">Home</a>
-          <a href="https://www.ebay.com/str/miniexcadeals?_tab=sales" target="_blank" rel="noopener noreferrer">Sales</a>
-          <a href="https://www.ebay.com/str/miniexcadeals?_tab=about" target="_blank" rel="noopener noreferrer">About</a>
-          <a href="https://www.ebay.com/str/miniexcadeals?_tab=feedback" target="_blank" rel="noopener noreferrer">Feedback</a>
+          <a href="https://www.ebay.com/str/machinerybargains?_tab=sales" target="_blank" rel="noopener noreferrer">Sales</a>
+          <a href="https://www.ebay.com/str/machinerybargains?_tab=about" target="_blank" rel="noopener noreferrer">About</a>
+          <a href="https://www.ebay.com/str/machinerybargains?_tab=feedback" target="_blank" rel="noopener noreferrer">Feedback</a>
           <a href="https://signin.ebay.com/ws/eBayISAPI.dll?SignIn" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
       </nav>
@@ -757,14 +889,22 @@
 
   <!-- SPECS -->
 <section id="vlc-specs" class="specific-section">
-  <h2 class="specific-main-title"><span class="specific-txt-grad-title">Technical Specifications</span></h2>
+  
+  <h2 class="specific-main-title">
+    <span class="specific-txt-grad-title">Technical Specifications</span>
+  </h2>
+  
   <div class="specific-wrapper-card">
     <div class="specific-body-layout">
+      
+      <!-- Sticky/Responsive Image Showcase Frame -->
       <div class="specific-showcase-box">
         <div class="specific-img-placeholder">
           <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="Product spec image">
         </div>
       </div>
+      
+      <!-- Auto-Responsive Grid Layout for 20+ items -->
       <div class="specific-table-grid">
         <div class="specific-row"><span class="specific-spec-label">Condition</span><span class="specific-spec-val specific-spec-highlight">Brand New</span></div>
         <div class="specific-row"><span class="specific-spec-label">Build Standard</span><span class="specific-spec-val">Industrial</span></div>
@@ -772,113 +912,234 @@
         <div class="specific-row"><span class="specific-spec-label">Engine Config</span><span class="specific-spec-val">Eco Certified</span></div>
         <div class="specific-row"><span class="specific-spec-label">Operating Wt.</span><span class="specific-spec-val">Optimized</span></div>
         <div class="specific-row"><span class="specific-spec-label">Track Chassis</span><span class="specific-spec-val">Heavy Grip</span></div>
-        <div class="specific-row"><span class="specific-spec-label">Build Standard</span><span class="specific-spec-val">Industrial</span></div>
-        <div class="specific-row"><span class="specific-spec-label">Chamber Type</span><span class="specific-spec-val">Asymmetric</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Fuel Capacity</span><span class="specific-spec-val">120L</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Hydraulic Flow</span><span class="specific-spec-val">65 L/min</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Max Speed</span><span class="specific-spec-val">4.5 km/h</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Boom Swing</span><span class="specific-spec-val">Left / Right</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Cooling System</span><span class="specific-spec-val">Liquid Cooled</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Total Width</span><span class="specific-spec-val">1100 mm</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Max Dig Depth</span><span class="specific-spec-val">2150 mm</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Tailswing Radius</span><span class="specific-spec-val">Zero Tail</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Bucket Capacity</span><span class="specific-spec-val">0.03 m³</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Ground Pressure</span><span class="specific-spec-val">28 kPa</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Pump Type</span><span class="specific-spec-val">Gear Pump</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Travel Torque</span><span class="specific-spec-val">High Output</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Electric Voltage</span><span class="specific-spec-val">12V DC</span></div>
+        <div class="specific-row"><span class="specific-spec-label">Warranty Terms</span><span class="specific-spec-val">1-Yr Global</span></div>
       </div>
+      
     </div>
   </div>
 </section>
 
-  <!-- GALLERY (fixed sync: main viewport + thumbnails share the same slide anchors) -->
+  <!-- GALLERY (thumbnails are plain anchors; clicking scrolls the main viewport
+       to the matching image via native browser scroll-into-view — no <input>,
+       no JS, no :target hacks required) -->
 <section class="premium-gallery-section">
-<div class="gallery-container">
-        <!-- MAIN VIEWPORT DISPLAY -->
+    
+    <input type="radio" name="slide-group" id="s-1" class="slide-state-ctrl" checked>
+    <input type="radio" name="slide-group" id="s-2" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-3" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-4" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-5" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-6" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-7" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-8" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-9" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-10" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-11" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-12" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-13" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-14" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-15" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-16" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-17" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-18" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-19" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-20" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-21" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-22" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-23" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-24" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-25" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-26" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-27" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-28" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-29" class="slide-state-ctrl">
+    <input type="radio" name="slide-group" id="s-30" class="slide-state-ctrl">
+
+    <input type="radio" name="page-group" id="p-1" class="page-state-ctrl" checked>
+    <input type="radio" name="page-group" id="p-2" class="page-state-ctrl">
+    <input type="radio" name="page-group" id="p-3" class="page-state-ctrl">
+
+    <div class="gallery-container">
+        
         <div class="main-viewport-wrapper">
-            <!-- PAGE 1 SLIDES (1 - 10) -->
-            <div id="slide-1" class="gallery-slide"><div class="control-pad"><a href="#slide-30" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">1 / 30</span><a href="#slide-2" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="View 1"></div>
-            <div id="slide-2" class="gallery-slide"><div class="control-pad"><a href="#slide-1" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">2 / 30</span><a href="#slide-3" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="View 2"></div>
-            <div id="slide-3" class="gallery-slide"><div class="control-pad"><a href="#slide-2" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">3 / 30</span><a href="#slide-4" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="View 3"></div>
-            <div id="slide-4" class="gallery-slide"><div class="control-pad"><a href="#slide-3" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">4 / 30</span><a href="#slide-5" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="View 4"></div>
-            <div id="slide-5" class="gallery-slide"><div class="control-pad"><a href="#slide-4" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">5 / 30</span><a href="#slide-6" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="View 5"></div>
-            <div id="slide-6" class="gallery-slide"><div class="control-pad"><a href="#slide-5" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">6 / 30</span><a href="#slide-7" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="View 6"></div>
-            <div id="slide-7" class="gallery-slide"><div class="control-pad"><a href="#slide-6" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">7 / 30</span><a href="#slide-8" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="View 7"></div>
-            <div id="slide-8" class="gallery-slide"><div class="control-pad"><a href="#slide-7" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">8 / 30</span><a href="#slide-9" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="View 8"></div>
-            <div id="slide-9" class="gallery-slide"><div class="control-pad"><a href="#slide-8" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">9 / 30</span><a href="#slide-10" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="View 9"></div>
-            <div id="slide-10" class="gallery-slide"><div class="control-pad"><a href="#slide-9" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">10 / 30</span><a href="#slide-11" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="View 10"></div>
+            
+            <div class="gallery-slide s-1-view">
+                <div class="control-pad">
+                    <span class="slide-indicator">1 / 30</span>
+                    <label for="s-2" class="nav-arrow next-arrow">&#10095;</label>
+                </div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Equipment View 1">
+            </div>
+            
+            <div class="gallery-slide s-2-view">
+                <div class="control-pad">
+                    <label for="s-1" class="nav-arrow prev-arrow">&#10094;</label>
+                    <span class="slide-indicator">2 / 30</span>
+                    <label for="s-3" class="nav-arrow next-arrow">&#10095;</label>
+                </div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Equipment View 2">
+            </div>
+            
+            <div class="gallery-slide s-3-view">
+                <div class="control-pad">
+                    <label for="s-2" class="nav-arrow prev-arrow">&#10094;</label>
+                    <span class="slide-indicator">3 / 30</span>
+                    <label for="s-4" class="nav-arrow next-arrow">&#10095;</label>
+                </div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="Equipment View 3">
+            </div>
+            
+            <div class="gallery-slide s-4-view">
+                <div class="control-pad">
+                    <label for="s-3" class="nav-arrow prev-arrow">&#10094;</label>
+                    <span class="slide-indicator">4 / 30</span>
+                    <label for="s-5" class="nav-arrow next-arrow">&#10095;</label>
+                </div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="Equipment View 4">
+            </div>
+            
+            <div class="gallery-slide s-5-view">
+                <div class="control-pad">
+                    <label for="s-4" class="nav-arrow prev-arrow">&#10094;</label>
+                    <span class="slide-indicator">5 / 30</span>
+                    <label for="s-6" class="nav-arrow next-arrow">&#10095;</label>
+                </div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="Equipment View 5">
+            </div>
+            
+            <div class="gallery-slide s-6-view">
+                <div class="control-pad">
+                    <label for="s-5" class="nav-arrow prev-arrow">&#10094;</label>
+                    <span class="slide-indicator">6 / 30</span>
+                    <label for="s-7" class="nav-arrow next-arrow">&#10095;</label>
+                </div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="Equipment View 6">
+            </div>
+            
+            <div class="gallery-slide s-7-view">
+                <div class="control-pad">
+                    <label for="s-6" class="nav-arrow prev-arrow">&#10094;</label>
+                    <span class="slide-indicator">7 / 30</span>
+                    <label for="s-8" class="nav-arrow next-arrow">&#10095;</label>
+                </div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Equipment View 7">
+            </div>
 
-            <!-- PAGE 2 SLIDES (11 - 20) -->
-            <div id="slide-11" class="gallery-slide"><div class="control-pad"><a href="#slide-10" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">11 / 30</span><a href="#slide-12" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="View 11"></div>
-            <div id="slide-12" class="gallery-slide"><div class="control-pad"><a href="#slide-11" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">12 / 30</span><a href="#slide-13" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="View 12"></div>
-            <div id="slide-13" class="gallery-slide"><div class="control-pad"><a href="#slide-12" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">13 / 30</span><a href="#slide-14" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/13.webp" alt="View 13"></div>
-            <div id="slide-14" class="gallery-slide"><div class="control-pad"><a href="#slide-13" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">14 / 30</span><a href="#slide-15" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/14.webp" alt="View 14"></div>
-            <div id="slide-15" class="gallery-slide"><div class="control-pad"><a href="#slide-14" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">15 / 30</span><a href="#slide-16" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="View 15"></div>
-            <div id="slide-16" class="gallery-slide"><div class="control-pad"><a href="#slide-15" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">16 / 30</span><a href="#slide-17" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/16.webp" alt="View 16"></div>
-            <div id="slide-17" class="gallery-slide"><div class="control-pad"><a href="#slide-16" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">17 / 30</span><a href="#slide-18" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/17.webp" alt="View 17"></div>
-            <div id="slide-18" class="gallery-slide"><div class="control-pad"><a href="#slide-17" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">18 / 30</span><a href="#slide-19" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/18.webp" alt="View 18"></div>
-            <div id="slide-19" class="gallery-slide"><div class="control-pad"><a href="#slide-18" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">19 / 30</span><a href="#slide-20" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/19.webp" alt="View 19"></div>
-            <div id="slide-20" class="gallery-slide"><div class="control-pad"><a href="#slide-19" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">20 / 30</span><a href="#slide-21" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/20.webp" alt="View 20"></div>
+            <div class="gallery-slide s-8-view">
+                <div class="control-pad"><label for="s-7" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">8 / 30</span><label for="s-9" class="nav-arrow next-arrow">&#10095;</label></div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Equipment View 8">
+            </div>
 
-            <!-- PAGE 3 SLIDES (21 - 30) -->
-            <div id="slide-21" class="gallery-slide"><div class="control-pad"><a href="#slide-20" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">21 / 30</span><a href="#slide-22" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="View 21"></div>
-            <div id="slide-22" class="gallery-slide"><div class="control-pad"><a href="#slide-21" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">22 / 30</span><a href="#slide-23" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="View 22"></div>
-            <div id="slide-23" class="gallery-slide"><div class="control-pad"><a href="#slide-22" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">23 / 30</span><a href="#slide-24" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="View 23"></div>
-            <div id="slide-24" class="gallery-slide"><div class="control-pad"><a href="#slide-23" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">24 / 30</span><a href="#slide-25" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="View 24"></div>
-            <div id="slide-25" class="gallery-slide"><div class="control-pad"><a href="#slide-24" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">25 / 30</span><a href="#slide-26" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="View 25"></div>
-            <div id="slide-26" class="gallery-slide"><div class="control-pad"><a href="#slide-25" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">26 / 30</span><a href="#slide-27" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="View 26"></div>
-            <div id="slide-27" class="gallery-slide"><div class="control-pad"><a href="#slide-26" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">27 / 30</span><a href="#slide-28" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="View 27"></div>
-            <div id="slide-28" class="gallery-slide"><div class="control-pad"><a href="#slide-27" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">28 / 30</span><a href="#slide-29" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="View 28"></div>
-            <div id="slide-29" class="gallery-slide"><div class="control-pad"><a href="#slide-28" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">29 / 30</span><a href="#slide-30" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="View 29"></div>
-            <div id="slide-30" class="gallery-slide"><div class="control-pad"><a href="#slide-29" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">30 / 30</span><a href="#slide-1" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="View 30"></div>
+            <div class="gallery-slide s-9-view">
+                <div class="control-pad"><label for="s-8" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">9 / 30</span><label for="s-10" class="nav-arrow next-arrow">&#10095;</label></div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Equipment View 9">
+            </div>
+
+            <div class="gallery-slide s-10-view">
+                <div class="control-pad"><label for="s-9" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">10 / 30</span><label for="s-11" class="nav-arrow next-arrow">&#10095;</label></div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Equipment View 10">
+            </div>
+
+            <div class="gallery-slide s-11-view"><div class="control-pad"><label for="s-10" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">11 / 30</span><label for="s-12" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="Equipment View 11"></div>
+            <div class="gallery-slide s-12-view"><div class="control-pad"><label for="s-11" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">12 / 30</span><label for="s-13" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="Equipment View 12"></div>
+            <div class="gallery-slide s-13-view"><div class="control-pad"><label for="s-12" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">13 / 30</span><label for="s-14" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/13.webp" alt="Equipment View 13"></div>
+            <div class="gallery-slide s-14-view"><div class="control-pad"><label for="s-13" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">14 / 30</span><label for="s-15" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/14.webp" alt="Equipment View 14"></div>
+            <div class="gallery-slide s-15-view"><div class="control-pad"><label for="s-14" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">15 / 30</span><label for="s-16" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="Equipment View 15"></div>
+            <div class="gallery-slide s-16-view"><div class="control-pad"><label for="s-15" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">16 / 30</span><label for="s-17" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/16.webp" alt="Equipment View 16"></div>
+            <div class="gallery-slide s-17-view"><div class="control-pad"><label for="s-16" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">17 / 30</span><label for="s-18" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/17.webp" alt="Equipment View 17"></div>
+            <div class="gallery-slide s-18-view"><div class="control-pad"><label for="s-17" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">18 / 30</span><label for="s-19" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/18.webp" alt="Equipment View 18"></div>
+            <div class="gallery-slide s-19-view"><div class="control-pad"><label for="s-18" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">19 / 30</span><label for="s-20" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/19.webp" alt="Equipment View 19"></div>
+            <div class="gallery-slide s-20-view"><div class="control-pad"><label for="s-19" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">20 / 30</span><label for="s-21" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/20.webp" alt="Equipment View 20"></div>
+            <div class="gallery-slide s-21-view"><div class="control-pad"><label for="s-20" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">21 / 30</span><label for="s-22" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Equipment View 21"></div>
+            <div class="gallery-slide s-22-view"><div class="control-pad"><label for="s-21" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">22 / 30</span><label for="s-23" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Equipment View 22"></div>
+            <div class="gallery-slide s-23-view"><div class="control-pad"><label for="s-22" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">23 / 30</span><label for="s-24" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="Equipment View 23"></div>
+            <div class="gallery-slide s-24-view"><div class="control-pad"><label for="s-23" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">24 / 30</span><label for="s-25" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="Equipment View 24"></div>
+            <div class="gallery-slide s-25-view"><div class="control-pad"><label for="s-24" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">25 / 30</span><label for="s-26" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="Equipment View 25"></div>
+            <div class="gallery-slide s-26-view"><div class="control-pad"><label for="s-25" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">26 / 30</span><label for="s-27" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="Equipment View 26"></div>
+            <div class="gallery-slide s-27-view"><div class="control-pad"><label for="s-26" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">27 / 30</span><label for="s-28" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Equipment View 27"></div>
+            <div class="gallery-slide s-28-view"><div class="control-pad"><label for="s-27" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">28 / 30</span><label for="s-29" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Equipment View 28"></div>
+            <div class="gallery-slide s-29-view"><div class="control-pad"><label for="s-28" class="nav-arrow prev-arrow">&#10094;</label><span class="slide-indicator">29 / 30</span><label for="s-30" class="nav-arrow next-arrow">&#10095;</label></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Equipment View 29"></div>
+
+            <div class="gallery-slide s-30-view">
+                <div class="control-pad">
+                    <label for="s-29" class="nav-arrow prev-arrow">&#10094;</label>
+                    <span class="slide-indicator">30 / 30</span>
+                </div>
+                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Equipment View 30">
+            </div>
+
         </div>
 
-        <!-- THUMBNAIL BOTTOM NAVIGATION PANEL -->
         <div class="thumbnail-panel-outer">
+            
             <span class="btn-left-wrapper">
-                <a href="#slide-1" id="prev-to-p1" class="panel-nav-btn btn-left">&#10094;</a>
-                <a href="#slide-11" id="prev-to-p2" class="panel-nav-btn btn-left">&#10094;</a>
+                <label for="p-1" class="panel-nav-btn page-ctrl-prev-to-p1" onclick="document.getElementById('s-1').click();">&#10094;</label>
+                <label for="p-2" class="panel-nav-btn page-ctrl-prev-to-p2" onclick="document.getElementById('s-11').click();">&#10094;</label>
             </span>
-
+            
             <div class="thumbnail-scroller-track">
-                <!-- Page 1 -->
-                <div id="thumb-page-1" class="thumb-group-page">
-                    <a href="#slide-1" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="T1"></a>
-                    <a href="#slide-2" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="T2"></a>
-                    <a href="#slide-3" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="T3"></a>
-                    <a href="#slide-4" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="T4"></a>
-                    <a href="#slide-5" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="T5"></a>
-                    <a href="#slide-6" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="T6"></a>
-                    <a href="#slide-7" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="T7"></a>
-                    <a href="#slide-8" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="T8"></a>
-                    <a href="#slide-9" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="T9"></a>
-                    <a href="#slide-10" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="T10"></a>
+                
+                <div class="thumb-group-page p-1-pane">
+                    <aria-label><label for="s-1" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Thumb 1"></label></aria-label>
+                    <aria-label><label for="s-2" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Thumb 2"></label></aria-label>
+                    <aria-label><label for="s-3" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="Thumb 3"></label></aria-label>
+                    <aria-label><label for="s-4" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="Thumb 4"></label></aria-label>
+                    <aria-label><label for="s-5" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="Thumb 5"></label></aria-label>
+                    <aria-label><label for="s-6" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="Thumb 6"></label></aria-label>
+                    <aria-label><label for="s-7" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Thumb 7"></label></aria-label>
+                    <aria-label><label for="s-8" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Thumb 8"></label></aria-label>
+                    <aria-label><label for="s-9" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Thumb 9"></label></aria-label>
+                    <aria-label><label for="s-10" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Thumb 10"></label></aria-label>
                 </div>
-                <!-- Page 2 -->
-                <div id="thumb-page-2" class="thumb-group-page">
-                    <a href="#slide-11" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="T11"></a>
-                    <a href="#slide-12" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="T12"></a>
-                    <a href="#slide-13" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/13.webp" alt="T13"></a>
-                    <a href="#slide-14" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/14.webp" alt="T14"></a>
-                    <a href="#slide-15" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="T15"></a>
-                    <a href="#slide-16" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/16.webp" alt="T16"></a>
-                    <a href="#slide-17" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/17.webp" alt="T17"></a>
-                    <a href="#slide-18" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/18.webp" alt="T18"></a>
-                    <a href="#slide-19" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/19.webp" alt="T19"></a>
-                    <a href="#slide-20" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/20.webp" alt="T20"></a>
+
+                <div class="thumb-group-page p-2-pane">
+                    <aria-label><label for="s-11" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="Thumb 11"></label></aria-label>
+                    <aria-label><label for="s-12" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="Thumb 12"></label></aria-label>
+                    <aria-label><label for="s-13" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/13.webp" alt="Thumb 13"></label></aria-label>
+                    <aria-label><label for="s-14" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/14.webp" alt="Thumb 14"></label></aria-label>
+                    <aria-label><label for="s-15" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="Thumb 15"></label></aria-label>
+                    <aria-label><label for="s-16" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/16.webp" alt="Thumb 16"></label></aria-label>
+                    <aria-label><label for="s-17" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/17.webp" alt="Thumb 17"></label></aria-label>
+                    <aria-label><label for="s-18" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/18.webp" alt="Thumb 18"></label></aria-label>
+                    <aria-label><label for="s-19" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/19.webp" alt="Thumb 19"></label></aria-label>
+                    <aria-label><label for="s-20" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/20.webp" alt="Thumb 20"></label></aria-label>
                 </div>
-                <!-- Page 3 -->
-                <div id="thumb-page-3" class="thumb-group-page">
-                    <a href="#slide-21" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="T21"></a>
-                    <a href="#slide-22" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="T22"></a>
-                    <a href="#slide-23" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="T23"></a>
-                    <a href="#slide-24" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="T24"></a>
-                    <a href="#slide-25" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="T25"></a>
-                    <a href="#slide-26" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="T26"></a>
-                    <a href="#slide-27" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="T27"></a>
-                    <a href="#slide-28" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="T28"></a>
-                    <a href="#slide-29" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="T29"></a>
-                    <a href="#slide-30" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="T30"></a>
+
+                <div class="thumb-group-page p-3-pane">
+                    <aria-label><label for="s-21" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Thumb 21"></label></aria-label>
+                    <aria-label><label for="s-22" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Thumb 22"></label></aria-label>
+                    <aria-label><label for="s-23" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="Thumb 23"></label></aria-label>
+                    <aria-label><label for="s-24" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="Thumb 24"></label></aria-label>
+                    <aria-label><label for="s-25" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="Thumb 25"></label></aria-label>
+                    <aria-label><label for="s-26" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="Thumb 26"></label></aria-label>
+                    <aria-label><label for="s-27" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Thumb 27"></label></aria-label>
+                    <aria-label><label for="s-28" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Thumb 28"></label></aria-label>
+                    <aria-label><label for="s-29" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Thumb 29"></label></aria-label>
+                    <aria-label><label for="s-30" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Thumb 30"></label></aria-label>
                 </div>
+
             </div>
 
             <span class="btn-right-wrapper">
-                <a href="#slide-11" id="next-to-p2" class="panel-nav-btn btn-right">&#10095;</a>
-                <a href="#slide-21" id="next-to-p3" class="panel-nav-btn btn-right">&#10095;</a>
-                <a href="#slide-30" id="next-to-final" class="panel-nav-btn btn-right">&#10095;</a>
+                <label for="p-2" class="panel-nav-btn page-ctrl-next-to-p2" onclick="document.getElementById('s-11').click();">&#10095;</label>
+                <label for="p-3" class="panel-nav-btn page-ctrl-next-to-p3" onclick="document.getElementById('s-21').click();">&#10095;</label>
             </span>
         </div>
+
     </div>
-</div>
-</div>
 </section>
 
   <!-- FEATURES -->
@@ -1018,18 +1279,18 @@
   <div class="info-panel">
     <h3 class="contact-txt-grad-title">Buyer Guarantees &amp; Support</h3>
     <p class="contact-subtitle">We operate directly under eBay protection guidelines to assure safe delivery and premium support thresholds for every shipment.</p>
-
+    
     <div class="info-grid">
       <div class="info-box">
-        <h5 class="info-box-title">🚜 MINIEXCA.DEALS</h5>
-        <p class="info-box-desc">MiniExca.Deals is a fast growing compact equipment specialist on eBay, focused on mini excavators, skid steer loaders, and their attachments. We carry market leading compact machines built for landscaping, farms, and small-lot construction sites. Whether you're a homeowner tackling a backyard project or a contractor rounding out a fleet, MiniExca.Deals connects you with durable, affordable compact equipment backed by a full 3S distributorship (sales, after-sales service, and spares).</p>
+        <h5 class="info-box-title">🚜 MACHINERY.BARGAINS</h5>
+        <p class="info-box-desc">Machinery.Bargains is a fast growing heavy equipment solution provider on eBay. We offer market leading products such as dump trucks, forklifts, crawler cranes, backhoes, bulldozers, motor graders and asphalt mixing plants. Get your business off to a great start by purchasing important road construction equipment. From motor graders to dump trucks, there is a range of machines that you'll find at Machinery.Bargains. To tap into opportunities in construction and agricultural sectors , business owners, main contractors and sub-contractors need to harness durable and affordable heavy equipment backed by an effective 3S distributorship (covering machinery sales, after-sales service and spares.)</p>
       </div>
-
+      
       <div class="info-box">
         <h5 class="info-box-title">🚛 SHIPPING</h5>
         <p class="info-box-desc">All taxes/documentation/EPA certification charges will be fully covered by us. You'll only need to collect your order from our warehouse in Commerce, California, without worrying about any import paperwork. If you prefer delivery directly to your location, we offer FREE shipping within the Contiguous USA (48 states). Please note that this excludes Alaska and Hawaii. We process and ship orders within 7-10 business days after payment is received. Delivery typically takes an additional 7-14 days, depending on your destination.</p>
       </div>
-
+      
       <div class="info-box">
         <h5 class="info-box-title">🛡️ WARRANTY</h5>
         <p class="info-box-desc">1-year warranty with free spare parts (labor and logistics not included).<br><br>Please note we do not cover the logistics costs and the labour involved.</p>
@@ -1039,7 +1300,7 @@
 </section>
 
 <footer class="vlc-global-footer">
-  <p>Copyright &copy; MiniExca.Deals 2026 All Rights Reserved. | Compact Equipment Specialists</p>
+  <p>Copyright &copy; KiuQ.com 2026 All Rights Reserved.</p>
 </footer>
 
 </div>
