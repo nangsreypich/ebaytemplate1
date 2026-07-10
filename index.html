@@ -1,24 +1,25 @@
-<div id="typhon-listing">
+
+<div id="miniexca-listing">
 <style>
-  #typhon-listing, #typhon-listing * { box-sizing: border-box; }
-  #typhon-listing {
+  #miniexca-listing, #miniexca-listing * { box-sizing: border-box; }
+  #miniexca-listing {
     margin: 0;
     padding: 0;
     background-color: #f1f5f9;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   }
 
   /* ---------------- NAV ---------------- */
-  #typhon-listing .nav-wrapper-section {
+  #miniexca-listing .nav-wrapper-section {
     background-color: #ffffff;
     width: 100%;
   }
-  #typhon-listing .nav-container-limiter {
+  #miniexca-listing .nav-container-limiter {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
   }
-  #typhon-listing .vlc-navbar {
+  #miniexca-listing .vlc-navbar {
     background-color: rgba(255, 255, 255, 0.98);
     border-bottom: 1px solid #e2e8f0;
     padding: 16px 24px;
@@ -29,18 +30,16 @@
     gap: 12px 24px;
     width: 100%;
   }
-  #typhon-listing .nav-brand {
+  #miniexca-listing .nav-brand {
     font-size: 1.6rem;
     font-weight: 800;
     letter-spacing: 1.5px;
   }
-#typhon-listing .txt-grad-cyan {
-  /* Safely replaced webkit-clip with a solid, high-visibility deep cyan */
-  color: #0891b2;
+#miniexca-listing .txt-grad-cyan {
+  color: #15803d;
   font-weight: bold;
 }
-  /* Links wrap naturally on small screens — no toggle/JS needed */
-  #typhon-listing .nav-links {
+  #miniexca-listing .nav-links {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 22px;
@@ -48,7 +47,7 @@
     justify-content: center;
     flex: 1 1 auto;
   }
-  #typhon-listing .nav-links a {
+  #miniexca-listing .nav-links a {
     color: #334155;
     text-decoration: none;
     font-size: 0.85rem;
@@ -57,38 +56,38 @@
     letter-spacing: 0.5px;
     padding: 6px 0;
   }
-  #typhon-listing .nav-links a:hover { color: #0891b2; }
+  #miniexca-listing .nav-links a:hover { color: #15803d; }
 
   /* ---------------- HOME / HERO SLIDER ---------------- */
-  #typhon-listing .home-section {
+  #miniexca-listing .home-section {
     background-color: #ffffff;
     padding: 50px 20px;
     overflow: hidden;
     width: 100%;
     border-bottom: 1px solid #e2e8f0;
   }
-  #typhon-listing .home-slider-container {
+  #miniexca-listing .home-slider-container {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
     width: 100%;
   }
-  #typhon-listing .slider-viewport {
+  #miniexca-listing .slider-viewport {
     width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
-  #typhon-listing .slider-track {
+  #miniexca-listing .slider-track {
     display: flex;
     width: 600%;
     animation: typhonAutoScroll 24s cubic-bezier(0.25, 1, 0.5, 1) infinite;
   }
-  #typhon-listing .slider-track:hover,
-  #typhon-listing .slider-track:hover .slide-text,
-  #typhon-listing .slider-track:hover .product-img-aspect img {
+  #miniexca-listing .slider-track:hover,
+  #miniexca-listing .slider-track:hover .slide-text,
+  #miniexca-listing .slider-track:hover .product-img-aspect img {
     animation-play-state: paused;
   }
-  #typhon-listing .slide-unit {
+  #miniexca-listing .slide-unit {
     flex: 0 0 16.6666%;
     width: 16.6666%;
     scroll-snap-align: start;
@@ -98,14 +97,14 @@
     padding: 40px;
     gap: 40px;
   }
-  #typhon-listing .slide-text {
+  #miniexca-listing .slide-text {
     flex: 1;
     color: #1e293b;
     max-width: 550px;
     opacity: 0;
     animation: typhonTextEntrance 24s ease-in-out infinite;
   }
-  #typhon-listing .slide-text h2 {
+  #miniexca-listing .slide-text h2 {
     font-size: 2.4rem;
     font-weight: 800;
     margin: 0 0 15px 0;
@@ -113,33 +112,32 @@
     line-height: 1.2;
     text-transform: uppercase;
   }
-#typhon-listing .txt-grad-orange {
-  /* Removed background-clip and transparent fill to prevent eBay preview errors */
-  color: #ea580c; 
-  font-weight: bold; /* Keeps the text prominent and sharp */
+#miniexca-listing .txt-grad-orange {
+  color: #b45309;
+  font-weight: bold;
 }
-  #typhon-listing .slide-text p {
+  #miniexca-listing .slide-text p {
     font-size: 1.05rem;
     line-height: 1.6;
     color: #475569;
     margin: 0 0 30px 0;
   }
-  #typhon-listing .home-btn,
-  #typhon-listing .home-btn a {
+  #miniexca-listing .home-btn,
+  #miniexca-listing .home-btn a {
     display: inline-block;
     padding: 12px 30px;
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 50px;
+    border-radius: 8px;
     text-decoration: none;
   }
-  #typhon-listing .home-btn { background: linear-gradient(135deg, #06b6d4, #0891b2); color: #ffffff; }
-  #typhon-listing .home-btn.orange-btn { background: linear-gradient(135deg, #f97316, #ea580c); color: #ffffff; }
-  #typhon-listing .slide-img-frame { flex: 1; display: flex; justify-content: center; align-items: center; }
-  #typhon-listing .product-img-aspect { width: 100%; max-width: 480px; position: relative; }
-  #typhon-listing .product-img-aspect img {
+  #miniexca-listing .home-btn { background: linear-gradient(135deg, #22c55e, #15803d); color: #ffffff; }
+  #miniexca-listing .home-btn.orange-btn { background: linear-gradient(135deg, #f59e0b, #b45309); color: #ffffff; }
+  #miniexca-listing .slide-img-frame { flex: 1; display: flex; justify-content: center; align-items: center; }
+  #miniexca-listing .product-img-aspect { width: 100%; max-width: 480px; position: relative; }
+  #miniexca-listing .product-img-aspect img {
     width: 100%;
     height: auto;
     max-height: 480px;
@@ -176,16 +174,16 @@
   }
 
   @media (max-width: 1024px) {
-    #typhon-listing .slide-unit { padding: 30px 15px; gap: 25px; }
-    #typhon-listing .slide-text h2 { font-size: 1.9rem; }
+    #miniexca-listing .slide-unit { padding: 30px 15px; gap: 25px; }
+    #miniexca-listing .slide-text h2 { font-size: 1.9rem; }
   }
   @media (max-width: 768px) {
-    #typhon-listing .home-section { padding: 35px 10px; }
-    #typhon-listing .slide-unit { flex-direction: column-reverse; text-align: center; gap: 20px; }
-    #typhon-listing .slide-text h2 { font-size: 1.55rem; }
-    #typhon-listing .product-img-aspect { max-width: 270px; }
-    #typhon-listing .product-img-aspect img { max-height: 220px; }
-    #typhon-listing .home-btn, #typhon-listing .home-btn a { width: 85%; }
+    #miniexca-listing .home-section { padding: 35px 10px; }
+    #miniexca-listing .slide-unit { flex-direction: column-reverse; text-align: center; gap: 20px; }
+    #miniexca-listing .slide-text h2 { font-size: 1.55rem; }
+    #miniexca-listing .product-img-aspect { max-width: 270px; }
+    #miniexca-listing .product-img-aspect img { max-height: 220px; }
+    #miniexca-listing .home-btn, #miniexca-listing .home-btn a { width: 85%; }
     @keyframes typhonTextEntrance {
       0%,16.66%,33.33%,50%,66.66%,83.33% { opacity:0; transform: translateY(20px); }
       2%,13.33%,18.66%,30%,35.33%,46.66%,52%,63.33%,68.66%,80%,85.33%,96.66% { opacity:1; transform: translateY(0); }
@@ -199,14 +197,12 @@
   }
 
   /* ---------------- SPECS ---------------- */
-/* --- SPECIFICATIONS SECTION UNIQUE LOOK --- */
 .specific-section {
     padding: 40px 15px;
     background-color: #ffffff;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
-
 .specific-main-title {
     font-size: 2rem;
     color: #0f172a;
@@ -217,23 +213,20 @@
     margin-bottom: 40px;
     position: relative;
 }
-
 .specific-main-title::after {
     content: '';
     display: block;
     width: 80px;
     height: 4px;
-    background-color: #f59e0b; /* Typhon Machinery Signature Yellow-Gold */
+    background-color: #f59e0b;
     margin: 12px auto 0 auto;
     border-radius: 2px;
 }
-
-/* Master Grid Card Layout Wrapper */
 .specific-wrapper-card {
     max-width: 1160px;
     margin: 0 auto;
     background-color: #ffffff;
-    border-top: 5px solid #0f172a; /* Strong mechanical headline bar */
+    border-top: 5px solid #14532d;
     border-left: 1px solid #e2e8f0;
     border-right: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
@@ -241,17 +234,14 @@
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
     overflow: hidden;
 }
-
 .specific-body-layout {
     display: flex;
     flex-direction: row;
     align-items: stretch;
 }
-
-/* Showcase Block (Left Side Image Frame) */
 .specific-showcase-box {
     flex: 1;
-    background-color: #f8fafc; /* Sleek technical off-white background */
+    background-color: #f8fafc;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,41 +249,34 @@
     position: relative;
     border-right: 1px solid #e2e8f0;
 }
-
 .specific-img-placeholder {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-
 .specific-img-placeholder img {
     max-width: 100%;
     max-height: 420px;
     object-fit: contain;
     filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
 }
-
-/* Technical Metrics Grid Block (Right Side) */
 .specific-table-grid {
     flex: 1.4;
     padding: 40px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Split entries evenly across 2 columns */
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px 24px;
     background-color: #ffffff;
     align-content: center;
 }
-
-/* Individual Specification Rows */
 .specific-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 6px;
-    border-bottom: 1px dashed #cbd5e1; /* Blueprint style layout dividers */
+    border-bottom: 1px dashed #cbd5e1;
     box-sizing: border-box;
 }
-
 .specific-spec-label {
     font-size: 0.85rem;
     color: #64748b;
@@ -301,83 +284,49 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .specific-spec-val {
     font-size: 1rem;
     color: #0f172a;
     font-weight: 800;
     text-align: right;
 }
-
-/* Unique Luxury Accent Highlight Badge for specific terms (e.g., Brand New) */
 .specific-spec-val.specific-spec-highlight {
-    background-color: #f59e0b;
+    background-color: #15803d;
     color: #ffffff;
     padding: 4px 10px;
     border-radius: 6px;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
+    box-shadow: 0 4px 10px rgba(21, 128, 61, 0.25);
 }
-
-/* =========================================================================
-   STRICT MOBILE COMPATIBILITY FILTERS (Responsive Core Breakpoints)
-   ========================================================================= */
 @media (max-width: 992px) {
-    .specific-body-layout {
-        flex-direction: column; /* Stack image showcase directly above datasheet on tablets */
-    }
-    
-    .specific-showcase-box {
-        border-right: none;
-        border-bottom: 1px solid #e2e8f0;
-        padding: 40px 20px;
-    }
-    
-    .specific-showcase-box img {
-        max-height: 300px;
-    }
+    .specific-body-layout { flex-direction: column; }
+    .specific-showcase-box { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 40px 20px; }
+    .specific-showcase-box img { max-height: 300px; }
 }
-
 @media (max-width: 640px) {
-    .specific-main-title {
-        font-size: 1.6rem;
-    }
-    
-    .specific-table-grid {
-        grid-template-columns: 1fr; /* Force table entries into one perfect structural column */
-        padding: 24px 16px;
-        gap: 4px;
-    }
-    
-    .specific-row {
-        padding: 14px 4px; /* Slightly thicker touch target bounds on smartphones */
-    }
-    
-    .specific-spec-label {
-        font-size: 0.8rem;
-    }
-    
-    .specific-spec-val {
-        font-size: 0.95rem;
-    }
+    .specific-main-title { font-size: 1.6rem; }
+    .specific-table-grid { grid-template-columns: 1fr; padding: 24px 16px; gap: 4px; }
+    .specific-row { padding: 14px 4px; }
+    .specific-spec-label { font-size: 0.8rem; }
+    .specific-spec-val { font-size: 0.95rem; }
 }
 
-  /* ---------------- GALLERY (native anchor-scroll, no inputs) ---------------- */
-/* =========================================================================
-   TYPHON MACHINERY — HORIZONTAL 30-SLIDE INTERACTIVE ENGINE
-   ========================================================================= */
-/* =========================================================================
-   TYPHON MACHINERY — HORIZONTAL 30-SLIDE INTERACTIVE ENGINE
-   ========================================================================= */
+  /* =========================================================================
+     TYPHON MACHINERY — HORIZONTAL 30-SLIDE INTERACTIVE ENGINE (FIXED SYNC)
+     Thumbnail pages are now driven by the SAME #slide-N anchors used by the
+     main viewport arrows, grouped into three 10-image ranges. This means
+     jumping via the big prev/next arrows on the main image, OR via a
+     thumbnail click, always keeps both panels on the correct page — no
+     more falling back to page 1.
+     ========================================================================= */
 .premium-gallery-section {
     padding: 35px 20px;
     background-color: #ffffff;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
-
 .gallery-container {
     display: flex;
     flex-direction: column;
@@ -385,14 +334,12 @@
     margin: 0 auto;
     gap: 20px;
 }
-
-/* --- MAIN DISPLAY VIEWPORT --- */
 .main-viewport-wrapper {
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
-    background-color: #f1f5f9; 
-    border-top: 5px solid #0f172a; 
+    background-color: #f1f5f9;
+    border-top: 5px solid #14532d;
     border-left: 1px solid #cbd5e1;
     border-right: 1px solid #cbd5e1;
     border-bottom: 1px solid #cbd5e1;
@@ -403,7 +350,6 @@
     scroll-snap-type: x mandatory;
     box-shadow: inset 0 4px 12px rgba(15, 23, 42, 0.04), 0 10px 25px -5px rgba(0, 0, 0, 0.05);
 }
-
 .gallery-slide {
     position: relative;
     flex: 0 0 100%;
@@ -416,15 +362,12 @@
     box-sizing: border-box;
     scroll-snap-align: start;
 }
-
 .gallery-slide img {
     max-width: 95%;
     max-height: 95%;
     object-fit: contain;
-    filter: drop-shadow(0 12px 20px rgba(15, 23, 42, 0.09)); 
+    filter: drop-shadow(0 12px 20px rgba(15, 23, 42, 0.09));
 }
-
-/* --- UPPER CONTROLS PAD --- */
 .control-pad {
     position: absolute;
     top: 20px;
@@ -439,29 +382,10 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     z-index: 10;
 }
+.slide-indicator { font-size: 12px; font-weight: bold; color: #64748b; letter-spacing: 1px; }
+.nav-arrow { color: #0f172a; text-decoration: none; font-size: 14px; font-weight: bold; transition: color 0.15s ease; }
+.nav-arrow:hover { color: #16a34a; }
 
-.slide-indicator {
-    font-size: 12px;
-    font-weight: bold;
-    color: #64748b;
-    letter-spacing: 1px;
-}
-
-.nav-arrow {
-    color: #0f172a;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: color 0.15s ease;
-}
-
-.nav-arrow:hover {
-    color: #f59e0b; 
-}
-
-/* =========================================================================
-   HORIZONTAL PREVIEW BAR WITH CONDITIONAL ARROW HIDING
-   ========================================================================= */
 .thumbnail-panel-outer {
     display: flex;
     flex-direction: row;
@@ -470,17 +394,14 @@
     width: 100%;
     box-sizing: border-box;
 }
-
 .btn-left-wrapper, .btn-right-wrapper {
     display: inline-flex;
     position: relative;
     width: 40px;
     height: 84px;
 }
-
-/* Side navigation paging switches */
 .panel-nav-btn {
-    display: none; /* Hidden by default, toggled explicitly by page state */
+    display: none;
     align-items: center;
     justify-content: center;
     width: 40px;
@@ -498,33 +419,133 @@
     top: 0;
     left: 0;
 }
+.panel-nav-btn:hover { background-color: #0f172a; color: #ffffff; border-color: #0f172a; }
 
-.panel-nav-btn:hover {
-    background-color: #0f172a;
-    color: #ffffff;
-    border-color: #0f172a;
-}
+/* --- SYNCED STATE ENGINE: driven off the actual #slide-N targets ---
+   Default (no slide targeted, i.e. slide 1 showing) => thumb page 1 visible,
+   left arrow hidden, right arrow -> page 2.
+   Slides 1-9 targeted (viewing 2-10)  => still page 1, but slide-10 itself
+   flips to page 2 range start below.
+   We split ranges as: 1-10 => page1, 11-20 => page2, 21-30 => page3. */
 
-/* --- DYNAMIC STATE ENGINES FOR 3-PAGE TRACKING --- */
+.thumbnail-panel-outer #thumb-page-1 { display: flex; }
+.thumbnail-panel-outer #thumb-page-2 { display: none; }
+.thumbnail-panel-outer #thumb-page-3 { display: none; }
 
-/* Initial State / Page 1 Engine */
-.thumbnail-panel-outer:not(:has(:target)) #next-to-p2,
-.thumbnail-panel-outer:has(#thumb-page-1:target) #next-to-p2 {
-    display: flex;
-}
+/* When any slide 11-30 is targeted, hide page 1 by default and show page 2 */
+#miniexca-listing:has(#slide-11:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-12:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-13:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-14:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-15:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-16:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-17:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-18:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-19:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-20:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-1,
+#miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-1 { display: none; }
 
-/* Page 2 Engine */
-.thumbnail-panel-outer:has(#thumb-page-2:target) #prev-to-p1,
-.thumbnail-panel-outer:has(#thumb-page-2:target) #next-to-p3 {
-    display: flex;
-}
+#miniexca-listing:has(#slide-11:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-12:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-13:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-14:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-15:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-16:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-17:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-18:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-19:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-20:target) .thumbnail-panel-outer #thumb-page-2 { display: flex; }
 
-/* Page 3 Engine */
-.thumbnail-panel-outer:has(#thumb-page-3:target) #prev-to-p2 {
-    display: flex;
-}
+#miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-2,
+#miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-2 { display: none; }
 
-/* Horizontal track viewport layer */
+#miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-3,
+#miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-3,
+#miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-3,
+#miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-3,
+#miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-3,
+#miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-3,
+#miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-3,
+#miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-3,
+#miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-3,
+#miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-3 { display: flex; }
+
+/* Left/right panel arrows follow the same slide-range logic */
+#prev-to-p1, #prev-to-p2, #next-to-p2, #next-to-p3 { display: none; }
+#next-to-p2 { display: flex; }
+
+#miniexca-listing:has(#slide-11:target) #next-to-p2,
+#miniexca-listing:has(#slide-12:target) #next-to-p2,
+#miniexca-listing:has(#slide-13:target) #next-to-p2,
+#miniexca-listing:has(#slide-14:target) #next-to-p2,
+#miniexca-listing:has(#slide-15:target) #next-to-p2,
+#miniexca-listing:has(#slide-16:target) #next-to-p2,
+#miniexca-listing:has(#slide-17:target) #next-to-p2,
+#miniexca-listing:has(#slide-18:target) #next-to-p2,
+#miniexca-listing:has(#slide-19:target) #next-to-p2,
+#miniexca-listing:has(#slide-20:target) #next-to-p2 { display: none; }
+
+#miniexca-listing:has(#slide-11:target) #prev-to-p1,
+#miniexca-listing:has(#slide-12:target) #prev-to-p1,
+#miniexca-listing:has(#slide-13:target) #prev-to-p1,
+#miniexca-listing:has(#slide-14:target) #prev-to-p1,
+#miniexca-listing:has(#slide-15:target) #prev-to-p1,
+#miniexca-listing:has(#slide-16:target) #prev-to-p1,
+#miniexca-listing:has(#slide-17:target) #prev-to-p1,
+#miniexca-listing:has(#slide-18:target) #prev-to-p1,
+#miniexca-listing:has(#slide-19:target) #prev-to-p1,
+#miniexca-listing:has(#slide-20:target) #prev-to-p1 { display: flex; }
+
+#miniexca-listing:has(#slide-11:target) #next-to-p3,
+#miniexca-listing:has(#slide-12:target) #next-to-p3,
+#miniexca-listing:has(#slide-13:target) #next-to-p3,
+#miniexca-listing:has(#slide-14:target) #next-to-p3,
+#miniexca-listing:has(#slide-15:target) #next-to-p3,
+#miniexca-listing:has(#slide-16:target) #next-to-p3,
+#miniexca-listing:has(#slide-17:target) #next-to-p3,
+#miniexca-listing:has(#slide-18:target) #next-to-p3,
+#miniexca-listing:has(#slide-19:target) #next-to-p3,
+#miniexca-listing:has(#slide-20:target) #next-to-p3 { display: flex; }
+
+#miniexca-listing:has(#slide-21:target) #prev-to-p2,
+#miniexca-listing:has(#slide-22:target) #prev-to-p2,
+#miniexca-listing:has(#slide-23:target) #prev-to-p2,
+#miniexca-listing:has(#slide-24:target) #prev-to-p2,
+#miniexca-listing:has(#slide-25:target) #prev-to-p2,
+#miniexca-listing:has(#slide-26:target) #prev-to-p2,
+#miniexca-listing:has(#slide-27:target) #prev-to-p2,
+#miniexca-listing:has(#slide-28:target) #prev-to-p2,
+#miniexca-listing:has(#slide-29:target) #prev-to-p2,
+#miniexca-listing:has(#slide-30:target) #prev-to-p2 { display: flex; }
+
+#miniexca-listing:has(#slide-21:target) #next-to-p3,
+#miniexca-listing:has(#slide-22:target) #next-to-p3,
+#miniexca-listing:has(#slide-23:target) #next-to-p3,
+#miniexca-listing:has(#slide-24:target) #next-to-p3,
+#miniexca-listing:has(#slide-25:target) #next-to-p3,
+#miniexca-listing:has(#slide-26:target) #next-to-p3,
+#miniexca-listing:has(#slide-27:target) #next-to-p3,
+#miniexca-listing:has(#slide-28:target) #next-to-p3,
+#miniexca-listing:has(#slide-29:target) #next-to-p3,
+#miniexca-listing:has(#slide-30:target) #next-to-p3 { display: none; }
+
 .thumbnail-scroller-track {
     display: flex;
     flex-direction: row;
@@ -534,18 +555,13 @@
     flex: 1;
     gap: 15px;
 }
-
-/* Grid splits preview cards neatly into rows of 10 items per pane view */
 .thumb-group-page {
     display: flex;
     flex-direction: row;
     gap: 8px;
     flex: 0 0 100%;
-    scroll-snap-align: start;
     justify-content: space-between;
 }
-
-/* Visually Enlarged Thumbnail boxes */
 .thumb-link {
     display: flex;
     align-items: center;
@@ -563,210 +579,150 @@
     box-sizing: border-box;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.thumb-link:hover { border-bottom-color: #16a34a; background-color: #fafafa; transform: translateY(-5px); }
+.thumb-link img { max-width: 100%; max-height: 100%; object-fit: contain; opacity: 0.85; }
+.thumb-link:hover img { opacity: 1; }
 
-.thumb-link:hover {
-    border-bottom-color: #f59e0b;
-    background-color: #fafafa;
-    transform: translateY(-5px);
-}
-
-.thumb-link img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    opacity: 0.85;
-}
-
-.thumb-link:hover img {
-    opacity: 1;
-}
-
-/* =========================================================================
-   RESPONSIVE COMPATIBILITY SCALING ENGINE
-   ========================================================================= */
 @media (max-width: 768px) {
-    .premium-gallery-section {
-        padding: 15px 10px;
-    }
-    
-    .btn-left-wrapper, .btn-right-wrapper, .panel-nav-btn {
-        width: 32px;
-        height: 64px;
-        font-size: 14px;
-    }
-    
-    .thumbnail-scroller-track {
-        height: 68px;
-    }
-    
-    .thumb-link {
-        height: 64px;
-        padding: 4px;
-    }
+    .premium-gallery-section { padding: 15px 10px; }
+    .btn-left-wrapper, .btn-right-wrapper, .panel-nav-btn { width: 32px; height: 64px; font-size: 14px; }
+    .thumbnail-scroller-track { height: 68px; }
+    .thumb-link { height: 64px; padding: 4px; }
 }
 
   /* ---------------- FEATURES ---------------- */
-  #typhon-listing .vlc-features-section {
-    padding: 60px 20px;
-    width: 100%;
-  }
-  #typhon-listing .features-main-title {
+  #miniexca-listing .vlc-features-section { padding: 60px 20px; width: 100%; }
+  #miniexca-listing .features-main-title {
     font-size: 2.4rem; font-weight: 900; text-align: center; margin: 0 auto 45px auto;
     text-transform: uppercase; letter-spacing: 1.5px; max-width: 1200px;
     display: flex; flex-direction: column; align-items: center; gap: 12px;
   }
-#typhon-listing .features-txt-grad-title {
-  /* Cleaned to ensure stability inside eBay's description sandboxes */
-  color: #312e81;
-  font-weight: bold;
-}
-  #typhon-listing .features-main-title::after {
+#miniexca-listing .features-txt-grad-title { color: #14532d; font-weight: bold; }
+  #miniexca-listing .features-main-title::after {
     content: ''; display: block; width: 80px; height: 4px; border-radius: 10px;
-    background: linear-gradient(90deg, #4f46e5, #06b6d4);
+    background: linear-gradient(90deg, #15803d, #f59e0b);
   }
-  #typhon-listing .features-stack-container { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; width: 100%; }
-  #typhon-listing .feat-row-card {
+  #miniexca-listing .features-stack-container { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; width: 100%; }
+  #miniexca-listing .feat-row-card {
     background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px 30px;
     box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01); display: flex; align-items: center; gap: 35px;
   }
-  #typhon-listing .feat-left-block { display: flex; align-items: center; gap: 18px; flex: 0 0 280px; }
-  #typhon-listing .feat-right-block { flex: 1; border-left: 2px solid #f1f5f9; padding-left: 30px; }
-  #typhon-listing .feat-icon-wrapper { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  #typhon-listing .feat-icon { font-size: 1.3rem; }
-  #typhon-listing .feat-icon-cyan { background-color: rgba(6, 182, 212, 0.1); }
-  #typhon-listing .feat-icon-purple { background-color: rgba(139, 92, 246, 0.1); }
-  #typhon-listing .feat-icon-pink { background-color: rgba(236, 72, 153, 0.1); }
-  #typhon-listing .feat-left-block h4 { font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: 0.5px; text-transform: uppercase; }
-#typhon-listing .txt-grad-purple {
-  /* Safely replaced webkit-clip with a solid deep violet */
-  color: #6d28d9;
-  font-weight: bold;
-}
-
-#typhon-listing .txt-grad-pink {
-  /* Safely replaced webkit-clip with a high-visibility bold pink */
-  color: #be185d;
-  font-weight: bold;
-}
-  #typhon-listing .feat-right-block p { color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+  #miniexca-listing .feat-left-block { display: flex; align-items: center; gap: 18px; flex: 0 0 280px; }
+  #miniexca-listing .feat-right-block { flex: 1; border-left: 2px solid #f1f5f9; padding-left: 30px; }
+  #miniexca-listing .feat-icon-wrapper { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  #miniexca-listing .feat-icon { font-size: 1.3rem; }
+  #miniexca-listing .feat-icon-cyan { background-color: rgba(21, 128, 61, 0.1); }
+  #miniexca-listing .feat-icon-purple { background-color: rgba(51, 65, 85, 0.1); }
+  #miniexca-listing .feat-icon-pink { background-color: rgba(154, 52, 18, 0.1); }
+  #miniexca-listing .feat-left-block h4 { font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: 0.5px; text-transform: uppercase; }
+#miniexca-listing .txt-grad-purple { color: #334155; font-weight: bold; }
+#miniexca-listing .txt-grad-pink { color: #9a3412; font-weight: bold; }
+  #miniexca-listing .feat-right-block p { color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0; }
 
   @media (max-width: 850px) {
-    #typhon-listing .vlc-features-section { padding: 45px 15px; }
-    #typhon-listing .features-main-title { font-size: 1.9rem; margin-bottom: 30px; }
-    #typhon-listing .feat-row-card { flex-direction: column; align-items: flex-start; gap: 15px; padding: 22px; }
-    #typhon-listing .feat-left-block { flex: none; width: 100%; }
-    #typhon-listing .feat-right-block { border-left: none; padding-left: 0; width: 100%; }
+    #miniexca-listing .vlc-features-section { padding: 45px 15px; }
+    #miniexca-listing .features-main-title { font-size: 1.9rem; margin-bottom: 30px; }
+    #miniexca-listing .feat-row-card { flex-direction: column; align-items: flex-start; gap: 15px; padding: 22px; }
+    #miniexca-listing .feat-left-block { flex: none; width: 100%; }
+    #miniexca-listing .feat-right-block { border-left: none; padding-left: 0; width: 100%; }
   }
 
   /* ---------------- RELATED ---------------- */
-  #typhon-listing .vlc-related-section {
-    padding: 60px 20px; width: 100%;
-  }
-  #typhon-listing .related-main-title {
+  #miniexca-listing .vlc-related-section { padding: 60px 20px; width: 100%; }
+  #miniexca-listing .related-main-title {
     font-size: 2.4rem; font-weight: 900; text-align: center; margin: 0 auto 45px auto;
     text-transform: uppercase; letter-spacing: 1.5px; max-width: 1200px;
     display: flex; flex-direction: column; align-items: center; gap: 12px;
   }
-#typhon-listing .related-txt-grad-title {
-  /* Safely replaced webkit-clip with a solid deep indigo */
-  color: #312e81;
-  font-weight: bold;
-}
-  #typhon-listing .related-main-title::after {
+#miniexca-listing .related-txt-grad-title { color: #14532d; font-weight: bold; }
+  #miniexca-listing .related-main-title::after {
     content: ''; display: block; width: 80px; height: 4px; border-radius: 10px;
-    background: linear-gradient(90deg, #4f46e5, #06b6d4);
+    background: linear-gradient(90deg, #15803d, #f59e0b);
   }
-  #typhon-listing .related-products-row {
+  #miniexca-listing .related-products-row {
     max-width: 1200px; margin: 0 auto; display: grid;
     grid-template-columns: repeat(4, 1fr); gap: 24px; width: 100%; padding-bottom: 15px;
   }
-  #typhon-listing .related-product-card {
-    background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden;
+  #miniexca-listing .related-product-card {
+    background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;
     display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01);
   }
-  #typhon-listing .related-img-box {
+  #miniexca-listing .related-img-box {
     background-color: #f8fafc; height: 200px; display: flex; align-items: center; justify-content: center;
     padding: 20px; border-bottom: 1px solid #f1f5f9;
   }
-  #typhon-listing .related-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-  #typhon-listing .related-card-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-  #typhon-listing .related-item-title { font-size: 1.05rem; font-weight: 700; color: #1e293b; margin: 0 0 8px 0; line-height: 1.4; }
-  #typhon-listing .related-item-desc { font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 20px 0; flex-grow: 1; }
-  #typhon-listing .related-view-btn {
-    display: block; text-align: center; text-decoration: none; background-color: #f8fafc; color: #4f46e5;
+  #miniexca-listing .related-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  #miniexca-listing .related-card-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+  #miniexca-listing .related-item-title { font-size: 1.05rem; font-weight: 700; color: #1e293b; margin: 0 0 8px 0; line-height: 1.4; }
+  #miniexca-listing .related-item-desc { font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 20px 0; flex-grow: 1; }
+  #miniexca-listing .related-view-btn {
+    display: block; text-align: center; text-decoration: none; background-color: #f8fafc; color: #15803d;
     font-size: 0.85rem; font-weight: 700; padding: 10px 16px; border: 1px solid #e2e8f0; border-radius: 8px;
     text-transform: uppercase; letter-spacing: 0.5px;
   }
-  #typhon-listing .related-view-btn:hover {
-    background: linear-gradient(135deg, #4f46e5, #3b82f6); color: #ffffff; border-color: transparent;
+  #miniexca-listing .related-view-btn:hover {
+    background: linear-gradient(135deg, #15803d, #22c55e); color: #ffffff; border-color: transparent;
   }
 
   @media (max-width: 1024px) {
-    #typhon-listing .related-main-title { font-size: 2rem; }
-    #typhon-listing .related-products-row { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    #miniexca-listing .related-main-title { font-size: 2rem; }
+    #miniexca-listing .related-products-row { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   }
   @media (max-width: 768px) {
-    #typhon-listing .related-products-row {
+    #miniexca-listing .related-products-row {
       display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-left: 4px; padding-right: 4px;
     }
-    #typhon-listing .related-product-card { flex: 0 0 260px; scroll-snap-align: start; }
+    #miniexca-listing .related-product-card { flex: 0 0 260px; scroll-snap-align: start; }
   }
   @media (max-width: 480px) {
-    #typhon-listing .vlc-related-section { padding: 45px 10px; }
-    #typhon-listing .related-main-title { font-size: 1.8rem; }
+    #miniexca-listing .vlc-related-section { padding: 45px 10px; }
+    #miniexca-listing .related-main-title { font-size: 1.8rem; }
   }
 
   /* ---------------- CONTACT / FOOTER ---------------- */
-  #typhon-listing .vlc-contact-section {
-    padding: 60px 20px; width: 100%;
-  }
-  #typhon-listing .info-panel {
+  #miniexca-listing .vlc-contact-section { padding: 60px 20px; width: 100%; }
+  #miniexca-listing .info-panel {
     max-width: 1200px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e2e8f0;
-    border-radius: 24px; padding: 45px 35px; box-shadow: 0 10px 35px rgba(15, 23, 42, 0.03); text-align: center;
+    border-radius: 14px; padding: 45px 35px; box-shadow: 0 10px 35px rgba(15, 23, 42, 0.03); text-align: center;
   }
-#typhon-listing .contact-txt-grad-title {
-  font-size: 1.8rem; 
-  font-weight: 800; 
-  margin: 0 0 12px 0; 
-  letter-spacing: 0.5px; 
-  text-transform: uppercase;
-  /* Safely replaced webkit-clip with a vibrant, high-visibility brand blue */
-  color: #2563eb;
+#miniexca-listing .contact-txt-grad-title {
+  font-size: 1.8rem; font-weight: 800; margin: 0 0 12px 0; letter-spacing: 0.5px; text-transform: uppercase;
+  color: #16a34a;
 }
-  #typhon-listing .contact-subtitle { color: #475569; font-size: 0.95rem; line-height: 1.6; max-width: 680px; margin: 0 auto 40px auto; }
-  #typhon-listing .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; }
-  #typhon-listing .info-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px 20px; text-align: left; }
-  #typhon-listing .info-box:hover { background-color: #ffffff; border-color: #06b6d4; }
-  #typhon-listing .info-box-title { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px; }
-  #typhon-listing .info-box-desc { font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0; }
+  #miniexca-listing .contact-subtitle { color: #475569; font-size: 0.95rem; line-height: 1.6; max-width: 680px; margin: 0 auto 40px auto; }
+  #miniexca-listing .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; }
+  #miniexca-listing .info-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px 20px; text-align: left; }
+  #miniexca-listing .info-box:hover { background-color: #ffffff; border-color: #15803d; }
+  #miniexca-listing .info-box-title { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px; }
+  #miniexca-listing .info-box-desc { font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0; }
 
-  #typhon-listing .vlc-global-footer {
-    background-color: #0f172a; padding: 30px 20px; text-align: center; width: 100%; border-top: 1px solid #1e293b;
+  #miniexca-listing .vlc-global-footer {
+    background-color: #052e16; padding: 30px 20px; text-align: center; width: 100%; border-top: 1px solid #14532d;
   }
-  #typhon-listing .vlc-global-footer p { color: #94a3b8; font-size: 0.85rem; letter-spacing: 0.5px; margin: 0; line-height: 1.5; }
+  #miniexca-listing .vlc-global-footer p { color: #94a3b8; font-size: 0.85rem; letter-spacing: 0.5px; margin: 0; line-height: 1.5; }
 
   @media (max-width: 900px) {
-    #typhon-listing .info-panel { padding: 35px 20px; }
-    #typhon-listing .contact-txt-grad-title { font-size: 1.6rem; }
-    #typhon-listing .info-grid { gap: 16px; }
+    #miniexca-listing .info-panel { padding: 35px 20px; }
+    #miniexca-listing .contact-txt-grad-title { font-size: 1.6rem; }
+    #miniexca-listing .info-grid { gap: 16px; }
   }
   @media (max-width: 768px) {
-    #typhon-listing .vlc-contact-section { padding: 45px 15px; }
-    #typhon-listing .info-grid { grid-template-columns: 1fr; gap: 16px; }
-    #typhon-listing .info-box { padding: 20px; }
+    #miniexca-listing .vlc-contact-section { padding: 45px 15px; }
+    #miniexca-listing .info-grid { grid-template-columns: 1fr; gap: 16px; }
+    #miniexca-listing .info-box { padding: 20px; }
   }
 </style>
 
-  <!-- NAVBAR (no hamburger / no checkbox — links wrap responsively) -->
+  <!-- NAVBAR -->
   <section class="nav-wrapper-section">
     <div class="nav-container-limiter">
       <nav class="vlc-navbar">
         <div class="nav-brand"><span class="txt-grad-cyan">MACHINERY.BARGAINS</span></div>
         <div class="nav-links">
-          <a href="https://www.ebay.com/str/machinerybargains" target="_blank" rel="noopener noreferrer">Home</a>
-          <a href="https://www.ebay.com/str/machinerybargains?_tab=sales" target="_blank" rel="noopener noreferrer">Sales</a>
-          <a href="https://www.ebay.com/str/machinerybargains?_tab=about" target="_blank" rel="noopener noreferrer">About</a>
-          <a href="https://www.ebay.com/str/machinerybargains?_tab=feedback" target="_blank" rel="noopener noreferrer">Feedback</a>
+          <a href="https://www.ebay.com/str/miniexcadeals" target="_blank" rel="noopener noreferrer">Home</a>
+          <a href="https://www.ebay.com/str/miniexcadeals?_tab=sales" target="_blank" rel="noopener noreferrer">Sales</a>
+          <a href="https://www.ebay.com/str/miniexcadeals?_tab=about" target="_blank" rel="noopener noreferrer">About</a>
+          <a href="https://www.ebay.com/str/miniexcadeals?_tab=feedback" target="_blank" rel="noopener noreferrer">Feedback</a>
           <a href="https://signin.ebay.com/ws/eBayISAPI.dll?SignIn" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
       </nav>
@@ -864,20 +820,14 @@
 
   <!-- SPECS -->
 <section id="vlc-specs" class="specific-section">
-  
-  <h2 class="specific-main-title">
-    <span class="specific-txt-grad-title">Technical Specifications</span>
-  </h2>
-  
+  <h2 class="specific-main-title"><span class="specific-txt-grad-title">Technical Specifications</span></h2>
   <div class="specific-wrapper-card">
     <div class="specific-body-layout">
-      
       <div class="specific-showcase-box">
         <div class="specific-img-placeholder">
           <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="Product spec image">
         </div>
       </div>
-      
       <div class="specific-table-grid">
         <div class="specific-row"><span class="specific-spec-label">Condition</span><span class="specific-spec-val specific-spec-highlight">Brand New</span></div>
         <div class="specific-row"><span class="specific-spec-label">Build Standard</span><span class="specific-spec-val">Industrial</span></div>
@@ -888,110 +838,55 @@
         <div class="specific-row"><span class="specific-spec-label">Build Standard</span><span class="specific-spec-val">Industrial</span></div>
         <div class="specific-row"><span class="specific-spec-label">Chamber Type</span><span class="specific-spec-val">Asymmetric</span></div>
       </div>
-      
     </div>
   </div>
 </section>
 
-  <!-- GALLERY (thumbnails are plain anchors; clicking scrolls the main viewport
-       to the matching image via native browser scroll-into-view — no <input>,
-       no JS, no :target hacks required) -->
-<!-- PREMIUM INDUSTRIAL GALLERY SECTION (HORIZONTAL ROW CONFIG) -->
+  <!-- GALLERY (fixed sync: main viewport + thumbnails share the same slide anchors) -->
 <section class="premium-gallery-section">
     <div class="gallery-container">
-        
-        <!-- MAIN VIEWPORT (TOP) -->
+
         <div class="main-viewport-wrapper">
-            
-            <!-- Slide 1 -->
             <div id="slide-1" class="gallery-slide">
-                <div class="control-pad">
-                    <a href="#slide-30" class="nav-arrow prev-arrow">&#10094;</a>
-                    <span class="slide-indicator">1 / 30</span>
-                    <a href="#slide-2" class="nav-arrow next-arrow">&#10095;</a>
-                </div>
+                <div class="control-pad"><a href="#slide-30" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">1 / 30</span><a href="#slide-2" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Equipment View 1">
             </div>
-            
-            <!-- Slide 2 -->
             <div id="slide-2" class="gallery-slide">
-                <div class="control-pad">
-                    <a href="#slide-1" class="nav-arrow prev-arrow">&#10094;</a>
-                    <span class="slide-indicator">2 / 30</span>
-                    <a href="#slide-3" class="nav-arrow next-arrow">&#10095;</a>
-                </div>
+                <div class="control-pad"><a href="#slide-1" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">2 / 30</span><a href="#slide-3" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Equipment View 2">
             </div>
-            
-            <!-- Slide 3 -->
             <div id="slide-3" class="gallery-slide">
-                <div class="control-pad">
-                    <a href="#slide-2" class="nav-arrow prev-arrow">&#10094;</a>
-                    <span class="slide-indicator">3 / 30</span>
-                    <a href="#slide-4" class="nav-arrow next-arrow">&#10095;</a>
-                </div>
+                <div class="control-pad"><a href="#slide-2" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">3 / 30</span><a href="#slide-4" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="Equipment View 3">
             </div>
-            
-            <!-- Slide 4 -->
             <div id="slide-4" class="gallery-slide">
-                <div class="control-pad">
-                    <a href="#slide-3" class="nav-arrow prev-arrow">&#10094;</a>
-                    <span class="slide-indicator">4 / 30</span>
-                    <a href="#slide-5" class="nav-arrow next-arrow">&#10095;</a>
-                </div>
+                <div class="control-pad"><a href="#slide-3" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">4 / 30</span><a href="#slide-5" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="Equipment View 4">
             </div>
-            
-            <!-- Slide 5 -->
             <div id="slide-5" class="gallery-slide">
-                <div class="control-pad">
-                    <a href="#slide-4" class="nav-arrow prev-arrow">&#10094;</a>
-                    <span class="slide-indicator">5 / 30</span>
-                    <a href="#slide-6" class="nav-arrow next-arrow">&#10095;</a>
-                </div>
+                <div class="control-pad"><a href="#slide-4" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">5 / 30</span><a href="#slide-6" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="Equipment View 5">
             </div>
-            
-            <!-- Slide 6 -->
             <div id="slide-6" class="gallery-slide">
-                <div class="control-pad">
-                    <a href="#slide-5" class="nav-arrow prev-arrow">&#10094;</a>
-                    <span class="slide-indicator">6 / 30</span>
-                    <a href="#slide-7" class="nav-arrow next-arrow">&#10095;</a>
-                </div>
+                <div class="control-pad"><a href="#slide-5" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">6 / 30</span><a href="#slide-7" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="Equipment View 6">
             </div>
-            
-            <!-- Slide 7 -->
             <div id="slide-7" class="gallery-slide">
-                <div class="control-pad">
-                    <a href="#slide-6" class="nav-arrow prev-arrow">&#10094;</a>
-                    <span class="slide-indicator">7 / 30</span>
-                    <a href="#slide-8" class="nav-arrow next-arrow">&#10095;</a>
-                </div>
+                <div class="control-pad"><a href="#slide-6" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">7 / 30</span><a href="#slide-8" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Equipment View 7">
             </div>
-
-            <!-- Slide 8 -->
             <div id="slide-8" class="gallery-slide">
                 <div class="control-pad"><a href="#slide-7" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">8 / 30</span><a href="#slide-9" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Equipment View 8">
             </div>
-
-            <!-- Slide 9 -->
             <div id="slide-9" class="gallery-slide">
                 <div class="control-pad"><a href="#slide-8" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">9 / 30</span><a href="#slide-10" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Equipment View 9">
             </div>
-
-            <!-- Slide 10 -->
             <div id="slide-10" class="gallery-slide">
                 <div class="control-pad"><a href="#slide-9" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">10 / 30</span><a href="#slide-11" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Equipment View 10">
             </div>
-
-            <!-- Slides 11 to 29 Compressed for Clean Insertion -->
             <div id="slide-11" class="gallery-slide"><div class="control-pad"><a href="#slide-10" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">11 / 30</span><a href="#slide-12" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="Equipment View 11"></div>
             <div id="slide-12" class="gallery-slide"><div class="control-pad"><a href="#slide-11" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">12 / 30</span><a href="#slide-13" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="Equipment View 12"></div>
             <div id="slide-13" class="gallery-slide"><div class="control-pad"><a href="#slide-12" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">13 / 30</span><a href="#slide-14" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/13.webp" alt="Equipment View 13"></div>
@@ -1011,31 +906,22 @@
             <div id="slide-27" class="gallery-slide"><div class="control-pad"><a href="#slide-26" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">27 / 30</span><a href="#slide-28" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Equipment View 27"></div>
             <div id="slide-28" class="gallery-slide"><div class="control-pad"><a href="#slide-27" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">28 / 30</span><a href="#slide-29" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Equipment View 28"></div>
             <div id="slide-29" class="gallery-slide"><div class="control-pad"><a href="#slide-28" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">29 / 30</span><a href="#slide-30" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Equipment View 29"></div>
-
-            <!-- Slide 30 -->
             <div id="slide-30" class="gallery-slide">
-                <div class="control-pad">
-                    <a href="#slide-29" class="nav-arrow prev-arrow">&#10094;</a>
-                    <span class="slide-indicator">30 / 30</span>
-                    <a href="#slide-1" class="nav-arrow next-arrow">&#10095;</a>
-                </div>
+                <div class="control-pad"><a href="#slide-29" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">30 / 30</span><a href="#slide-1" class="nav-arrow next-arrow">&#10095;</a></div>
                 <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Equipment View 30">
             </div>
-
         </div>
 
-        <!-- NEW HORIZONTAL THUMBNAIL PANEL WITH LARGE IMAGE VIEWS (BOTTOM) -->
-<!-- FIXED HORIZONTAL THUMBNAIL PANEL (BOTTOM) -->
+        <!-- THUMBNAIL PANEL — now driven by the same #slide-N targets above,
+             so it always stays synced with whichever image is showing,
+             whether you clicked a thumbnail or the big image arrows. -->
         <div class="thumbnail-panel-outer">
-            <!-- Left Arrow Control (Targets page 1 or 2 depending on where you are) -->
             <span class="btn-left-wrapper">
-                <a href="#thumb-page-1" id="prev-to-p1" class="panel-nav-btn btn-left">&#10094;</a>
-                <a href="#thumb-page-2" id="prev-to-p2" class="panel-nav-btn btn-left">&#10094;</a>
+                <a href="#slide-1" id="prev-to-p1" class="panel-nav-btn btn-left">&#10094;</a>
+                <a href="#slide-10" id="prev-to-p2" class="panel-nav-btn btn-left">&#10094;</a>
             </span>
-            
+
             <div class="thumbnail-scroller-track">
-                
-                <!-- PAGE 1 (IMAGES 1-10) -->
                 <div id="thumb-page-1" class="thumb-group-page">
                     <a href="#slide-1" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Thumb 1"></a>
                     <a href="#slide-2" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Thumb 2"></a>
@@ -1048,8 +934,6 @@
                     <a href="#slide-9" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Thumb 9"></a>
                     <a href="#slide-10" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Thumb 10"></a>
                 </div>
-
-                <!-- PAGE 2 (IMAGES 11-20) -->
                 <div id="thumb-page-2" class="thumb-group-page">
                     <a href="#slide-11" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="Thumb 11"></a>
                     <a href="#slide-12" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="Thumb 12"></a>
@@ -1062,8 +946,6 @@
                     <a href="#slide-19" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/19.webp" alt="Thumb 19"></a>
                     <a href="#slide-20" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/20.webp" alt="Thumb 20"></a>
                 </div>
-
-                <!-- PAGE 3 (IMAGES 21-30) -->
                 <div id="thumb-page-3" class="thumb-group-page">
                     <a href="#slide-21" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Thumb 21"></a>
                     <a href="#slide-22" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Thumb 22"></a>
@@ -1076,13 +958,11 @@
                     <a href="#slide-29" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Thumb 29"></a>
                     <a href="#slide-30" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Thumb 30"></a>
                 </div>
-
             </div>
 
-            <!-- Right Arrow Control (Targets page 2 or 3 depending on where you are) -->
             <span class="btn-right-wrapper">
-                <a href="#thumb-page-2" id="next-to-p2" class="panel-nav-btn btn-right">&#10095;</a>
-                <a href="#thumb-page-3" id="next-to-p3" class="panel-nav-btn btn-right">&#10095;</a>
+                <a href="#slide-11" id="next-to-p2" class="panel-nav-btn btn-right">&#10095;</a>
+                <a href="#slide-21" id="next-to-p3" class="panel-nav-btn btn-right">&#10095;</a>
             </span>
         </div>
 
@@ -1226,18 +1106,18 @@
   <div class="info-panel">
     <h3 class="contact-txt-grad-title">Buyer Guarantees &amp; Support</h3>
     <p class="contact-subtitle">We operate directly under eBay protection guidelines to assure safe delivery and premium support thresholds for every shipment.</p>
-    
+
     <div class="info-grid">
       <div class="info-box">
-        <h5 class="info-box-title">🚜 MACHINERY.BARGAINS</h5>
-        <p class="info-box-desc">Machinery.Bargains is a fast growing heavy equipment solution provider on eBay. We offer market leading products such as dump trucks, forklifts, crawler cranes, backhoes, bulldozers, motor graders and asphalt mixing plants. Get your business off to a great start by purchasing important road construction equipment. From motor graders to dump trucks, there is a range of machines that you'll find at Machinery.Bargains. To tap into opportunities in construction and agricultural sectors , business owners, main contractors and sub-contractors need to harness durable and affordable heavy equipment backed by an effective 3S distributorship (covering machinery sales, after-sales service and spares.)</p>
+        <h5 class="info-box-title">🚜 MINIEXCA.DEALS</h5>
+        <p class="info-box-desc">MiniExca.Deals is a fast growing compact equipment specialist on eBay, focused on mini excavators, skid steer loaders, and their attachments. We carry market leading compact machines built for landscaping, farms, and small-lot construction sites. Whether you're a homeowner tackling a backyard project or a contractor rounding out a fleet, MiniExca.Deals connects you with durable, affordable compact equipment backed by a full 3S distributorship (sales, after-sales service, and spares).</p>
       </div>
-      
+
       <div class="info-box">
         <h5 class="info-box-title">🚛 SHIPPING</h5>
         <p class="info-box-desc">All taxes/documentation/EPA certification charges will be fully covered by us. You'll only need to collect your order from our warehouse in Commerce, California, without worrying about any import paperwork. If you prefer delivery directly to your location, we offer FREE shipping within the Contiguous USA (48 states). Please note that this excludes Alaska and Hawaii. We process and ship orders within 7-10 business days after payment is received. Delivery typically takes an additional 7-14 days, depending on your destination.</p>
       </div>
-      
+
       <div class="info-box">
         <h5 class="info-box-title">🛡️ WARRANTY</h5>
         <p class="info-box-desc">1-year warranty with free spare parts (labor and logistics not included).<br><br>Please note we do not cover the logistics costs and the labour involved.</p>
@@ -1247,7 +1127,7 @@
 </section>
 
 <footer class="vlc-global-footer">
-  <p>Copyright &copy; KiuQ.com 2026 All Rights Reserved.</p>
+  <p>Copyright &copy; MiniExca.Deals 2026 All Rights Reserved. | Compact Equipment Specialists</p>
 </footer>
 
 </div>
