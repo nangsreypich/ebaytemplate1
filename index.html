@@ -421,130 +421,67 @@
 }
 .panel-nav-btn:hover { background-color: #0f172a; color: #ffffff; border-color: #0f172a; }
 
-/* --- SYNCED STATE ENGINE: driven off the actual #slide-N targets ---
-   Default (no slide targeted, i.e. slide 1 showing) => thumb page 1 visible,
-   left arrow hidden, right arrow -> page 2.
-   Slides 1-9 targeted (viewing 2-10)  => still page 1, but slide-10 itself
-   flips to page 2 range start below.
-   We split ranges as: 1-10 => page1, 11-20 => page2, 21-30 => page3. */
+/* --- STATE LOGIC ENGINE (10 Image per view matrix) --- */
+/* --- STATE LOGIC ENGINE --- */
+        .thumbnail-panel-outer #thumb-page-1 { display: flex; }
+        .thumbnail-panel-outer #thumb-page-2,
+        .thumbnail-panel-outer #thumb-page-3 { display: none; }
 
-.thumbnail-panel-outer #thumb-page-1 { display: flex; }
-.thumbnail-panel-outer #thumb-page-2 { display: none; }
-.thumbnail-panel-outer #thumb-page-3 { display: none; }
+        #prev-to-p1, #prev-to-p2, #next-to-p2, #next-to-p3, #next-to-final { display: none; }
+        #next-to-p2 { display: flex; } 
 
-/* When any slide 11-30 is targeted, hide page 1 by default and show page 2 */
-#miniexca-listing:has(#slide-11:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-12:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-13:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-14:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-15:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-16:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-17:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-18:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-19:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-20:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-1,
-#miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-1 { display: none; }
+        /* Page 1 Dynamic Termination */
+        #miniexca-listing:has(#slide-11:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-12:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-13:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-14:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-15:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-16:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-17:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-18:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-19:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-20:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-1,
+        #miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-1 { display: none; }
 
-#miniexca-listing:has(#slide-11:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-12:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-13:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-14:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-15:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-16:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-17:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-18:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-19:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-20:target) .thumbnail-panel-outer #thumb-page-2 { display: flex; }
+        /* Page 2 Mechanics */
+        #miniexca-listing:has(#slide-11:target) .thumbnail-panel-outer #thumb-page-2,
+        #miniexca-listing:has(#slide-12:target) .thumbnail-panel-outer #thumb-page-2,
+        #miniexca-listing:has(#slide-13:target) .thumbnail-panel-outer #thumb-page-2,
+        #miniexca-listing:has(#slide-14:target) .thumbnail-panel-outer #thumb-page-2,
+        #miniexca-listing:has(#slide-15:target) .thumbnail-panel-outer #thumb-page-2,
+        #miniexca-listing:has(#slide-16:target) .thumbnail-panel-outer #thumb-page-2,
+        #miniexca-listing:has(#slide-17:target) .thumbnail-panel-outer #thumb-page-2,
+        #miniexca-listing:has(#slide-18:target) .thumbnail-panel-outer #thumb-page-2,
+        #miniexca-listing:has(#slide-19:target) .thumbnail-panel-outer #thumb-page-2,
+        #miniexca-listing:has(#slide-20:target) .thumbnail-panel-outer #thumb-page-2 { display: flex; }
 
-#miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-2,
-#miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-2 { display: none; }
+        #miniexca-listing:has(#slide-11:target) #next-to-p2, #miniexca-listing:has(#slide-12:target) #next-to-p2, #miniexca-listing:has(#slide-13:target) #next-to-p2, #miniexca-listing:has(#slide-14:target) #next-to-p2, #miniexca-listing:has(#slide-15:target) #next-to-p2, #miniexca-listing:has(#slide-16:target) #next-to-p2, #miniexca-listing:has(#slide-17:target) #next-to-p2, #miniexca-listing:has(#slide-18:target) #next-to-p2, #miniexca-listing:has(#slide-19:target) #next-to-p2, #miniexca-listing:has(#slide-20:target) #next-to-p2 { display: none; }
+        #miniexca-listing:has(#slide-11:target) #prev-to-p1, #miniexca-listing:has(#slide-11:target) #next-to-p3, #miniexca-listing:has(#slide-12:target) #prev-to-p1, #miniexca-listing:has(#slide-12:target) #next-to-p3, #miniexca-listing:has(#slide-13:target) #prev-to-p1, #miniexca-listing:has(#slide-13:target) #next-to-p3, #miniexca-listing:has(#slide-14:target) #prev-to-p1, #miniexca-listing:has(#slide-14:target) #next-to-p3, #miniexca-listing:has(#slide-15:target) #prev-to-p1, #miniexca-listing:has(#slide-15:target) #next-to-p3, #miniexca-listing:has(#slide-16:target) #prev-to-p1, #miniexca-listing:has(#slide-16:target) #next-to-p3, #miniexca-listing:has(#slide-17:target) #prev-to-p1, #miniexca-listing:has(#slide-17:target) #next-to-p3, #miniexca-listing:has(#slide-18:target) #prev-to-p1, #miniexca-listing:has(#slide-18:target) #next-to-p3, #miniexca-listing:has(#slide-19:target) #prev-to-p1, #miniexca-listing:has(#slide-19:target) #next-to-p3, #miniexca-listing:has(#slide-20:target) #prev-to-p1, #miniexca-listing:has(#slide-20:target) #next-to-p3 { display: flex; }
 
-#miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-3,
-#miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-3,
-#miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-3,
-#miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-3,
-#miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-3,
-#miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-3,
-#miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-3,
-#miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-3,
-#miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-3,
-#miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-3 { display: flex; }
+        /* Page 3 Mechanics (Left arrow works, right arrow is forced completely hidden for all slides 21-30) */
+        #miniexca-listing:has(#slide-21:target) .thumbnail-panel-outer #thumb-page-3,
+        #miniexca-listing:has(#slide-22:target) .thumbnail-panel-outer #thumb-page-3,
+        #miniexca-listing:has(#slide-23:target) .thumbnail-panel-outer #thumb-page-3,
+        #miniexca-listing:has(#slide-24:target) .thumbnail-panel-outer #thumb-page-3,
+        #miniexca-listing:has(#slide-25:target) .thumbnail-panel-outer #thumb-page-3,
+        #miniexca-listing:has(#slide-26:target) .thumbnail-panel-outer #thumb-page-3,
+        #miniexca-listing:has(#slide-27:target) .thumbnail-panel-outer #thumb-page-3,
+        #miniexca-listing:has(#slide-28:target) .thumbnail-panel-outer #thumb-page-3,
+        #miniexca-listing:has(#slide-29:target) .thumbnail-panel-outer #thumb-page-3,
+        #miniexca-listing:has(#slide-30:target) .thumbnail-panel-outer #thumb-page-3 { display: flex; }
 
-/* Left/right panel arrows follow the same slide-range logic */
-#prev-to-p1, #prev-to-p2, #next-to-p2, #next-to-p3 { display: none; }
-#next-to-p2 { display: flex; }
-
-#miniexca-listing:has(#slide-11:target) #next-to-p2,
-#miniexca-listing:has(#slide-12:target) #next-to-p2,
-#miniexca-listing:has(#slide-13:target) #next-to-p2,
-#miniexca-listing:has(#slide-14:target) #next-to-p2,
-#miniexca-listing:has(#slide-15:target) #next-to-p2,
-#miniexca-listing:has(#slide-16:target) #next-to-p2,
-#miniexca-listing:has(#slide-17:target) #next-to-p2,
-#miniexca-listing:has(#slide-18:target) #next-to-p2,
-#miniexca-listing:has(#slide-19:target) #next-to-p2,
-#miniexca-listing:has(#slide-20:target) #next-to-p2 { display: none; }
-
-#miniexca-listing:has(#slide-11:target) #prev-to-p1,
-#miniexca-listing:has(#slide-12:target) #prev-to-p1,
-#miniexca-listing:has(#slide-13:target) #prev-to-p1,
-#miniexca-listing:has(#slide-14:target) #prev-to-p1,
-#miniexca-listing:has(#slide-15:target) #prev-to-p1,
-#miniexca-listing:has(#slide-16:target) #prev-to-p1,
-#miniexca-listing:has(#slide-17:target) #prev-to-p1,
-#miniexca-listing:has(#slide-18:target) #prev-to-p1,
-#miniexca-listing:has(#slide-19:target) #prev-to-p1,
-#miniexca-listing:has(#slide-20:target) #prev-to-p1 { display: flex; }
-
-#miniexca-listing:has(#slide-11:target) #next-to-p3,
-#miniexca-listing:has(#slide-12:target) #next-to-p3,
-#miniexca-listing:has(#slide-13:target) #next-to-p3,
-#miniexca-listing:has(#slide-14:target) #next-to-p3,
-#miniexca-listing:has(#slide-15:target) #next-to-p3,
-#miniexca-listing:has(#slide-16:target) #next-to-p3,
-#miniexca-listing:has(#slide-17:target) #next-to-p3,
-#miniexca-listing:has(#slide-18:target) #next-to-p3,
-#miniexca-listing:has(#slide-19:target) #next-to-p3,
-#miniexca-listing:has(#slide-20:target) #next-to-p3 { display: flex; }
-
-#miniexca-listing:has(#slide-21:target) #prev-to-p2,
-#miniexca-listing:has(#slide-22:target) #prev-to-p2,
-#miniexca-listing:has(#slide-23:target) #prev-to-p2,
-#miniexca-listing:has(#slide-24:target) #prev-to-p2,
-#miniexca-listing:has(#slide-25:target) #prev-to-p2,
-#miniexca-listing:has(#slide-26:target) #prev-to-p2,
-#miniexca-listing:has(#slide-27:target) #prev-to-p2,
-#miniexca-listing:has(#slide-28:target) #prev-to-p2,
-#miniexca-listing:has(#slide-29:target) #prev-to-p2,
-#miniexca-listing:has(#slide-30:target) #prev-to-p2 { display: flex; }
-
-#miniexca-listing:has(#slide-21:target) #next-to-p3,
-#miniexca-listing:has(#slide-22:target) #next-to-p3,
-#miniexca-listing:has(#slide-23:target) #next-to-p3,
-#miniexca-listing:has(#slide-24:target) #next-to-p3,
-#miniexca-listing:has(#slide-25:target) #next-to-p3,
-#miniexca-listing:has(#slide-26:target) #next-to-p3,
-#miniexca-listing:has(#slide-27:target) #next-to-p3,
-#miniexca-listing:has(#slide-28:target) #next-to-p3,
-#miniexca-listing:has(#slide-29:target) #next-to-p3,
-#miniexca-listing:has(#slide-30:target) #next-to-p3 { display: none; }
+        #miniexca-listing:has(#slide-21:target) #prev-to-p2, #miniexca-listing:has(#slide-22:target) #prev-to-p2, #miniexca-listing:has(#slide-23:target) #prev-to-p2, #miniexca-listing:has(#slide-24:target) #prev-to-p2, #miniexca-listing:has(#slide-25:target) #prev-to-p2, #miniexca-listing:has(#slide-26:target) #prev-to-p2, #miniexca-listing:has(#slide-27:target) #prev-to-p2, #miniexca-listing:has(#slide-28:target) #prev-to-p2, #miniexca-listing:has(#slide-29:target) #prev-to-p2, #miniexca-listing:has(#slide-30:target) #prev-to-p2 { display: flex; }
+        
+        #miniexca-listing:has(#slide-21:target) .btn-right-wrapper, #miniexca-listing:has(#slide-22:target) .btn-right-wrapper, #miniexca-listing:has(#slide-23:target) .btn-right-wrapper, #miniexca-listing:has(#slide-24:target) .btn-right-wrapper, #miniexca-listing:has(#slide-25:target) .btn-right-wrapper, #miniexca-listing:has(#slide-26:target) .btn-right-wrapper, #miniexca-listing:has(#slide-27:target) .btn-right-wrapper, #miniexca-listing:has(#slide-28:target) .btn-right-wrapper, #miniexca-listing:has(#slide-29:target) .btn-right-wrapper, #miniexca-listing:has(#slide-30:target) .btn-right-wrapper { display: none !important; }
 
 .thumbnail-scroller-track {
     display: flex;
@@ -719,7 +656,7 @@
       <nav class="vlc-navbar">
         <div class="nav-brand"><span class="txt-grad-cyan">MACHINERY.BARGAINS</span></div>
         <div class="nav-links">
-          <a href="https://www.ebay.com/str/miniexcadeals" target="_blank" rel="noopener noreferrer">Home</a>
+          <a href="https://www.ebay.com/str/machinerybargains" target="_blank" rel="noopener noreferrer">Home</a>
           <a href="https://www.ebay.com/str/miniexcadeals?_tab=sales" target="_blank" rel="noopener noreferrer">Sales</a>
           <a href="https://www.ebay.com/str/miniexcadeals?_tab=about" target="_blank" rel="noopener noreferrer">About</a>
           <a href="https://www.ebay.com/str/miniexcadeals?_tab=feedback" target="_blank" rel="noopener noreferrer">Feedback</a>
@@ -844,129 +781,104 @@
 
   <!-- GALLERY (fixed sync: main viewport + thumbnails share the same slide anchors) -->
 <section class="premium-gallery-section">
-    <div class="gallery-container">
-
+<div class="gallery-container">
+        <!-- MAIN VIEWPORT DISPLAY -->
         <div class="main-viewport-wrapper">
-            <div id="slide-1" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-30" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">1 / 30</span><a href="#slide-2" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Equipment View 1">
-            </div>
-            <div id="slide-2" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-1" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">2 / 30</span><a href="#slide-3" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Equipment View 2">
-            </div>
-            <div id="slide-3" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-2" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">3 / 30</span><a href="#slide-4" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="Equipment View 3">
-            </div>
-            <div id="slide-4" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-3" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">4 / 30</span><a href="#slide-5" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="Equipment View 4">
-            </div>
-            <div id="slide-5" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-4" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">5 / 30</span><a href="#slide-6" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="Equipment View 5">
-            </div>
-            <div id="slide-6" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-5" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">6 / 30</span><a href="#slide-7" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="Equipment View 6">
-            </div>
-            <div id="slide-7" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-6" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">7 / 30</span><a href="#slide-8" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Equipment View 7">
-            </div>
-            <div id="slide-8" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-7" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">8 / 30</span><a href="#slide-9" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Equipment View 8">
-            </div>
-            <div id="slide-9" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-8" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">9 / 30</span><a href="#slide-10" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Equipment View 9">
-            </div>
-            <div id="slide-10" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-9" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">10 / 30</span><a href="#slide-11" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Equipment View 10">
-            </div>
-            <div id="slide-11" class="gallery-slide"><div class="control-pad"><a href="#slide-10" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">11 / 30</span><a href="#slide-12" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="Equipment View 11"></div>
-            <div id="slide-12" class="gallery-slide"><div class="control-pad"><a href="#slide-11" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">12 / 30</span><a href="#slide-13" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="Equipment View 12"></div>
-            <div id="slide-13" class="gallery-slide"><div class="control-pad"><a href="#slide-12" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">13 / 30</span><a href="#slide-14" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/13.webp" alt="Equipment View 13"></div>
-            <div id="slide-14" class="gallery-slide"><div class="control-pad"><a href="#slide-13" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">14 / 30</span><a href="#slide-15" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/14.webp" alt="Equipment View 14"></div>
-            <div id="slide-15" class="gallery-slide"><div class="control-pad"><a href="#slide-14" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">15 / 30</span><a href="#slide-16" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="Equipment View 15"></div>
-            <div id="slide-16" class="gallery-slide"><div class="control-pad"><a href="#slide-15" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">16 / 30</span><a href="#slide-17" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/16.webp" alt="Equipment View 16"></div>
-            <div id="slide-17" class="gallery-slide"><div class="control-pad"><a href="#slide-16" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">17 / 30</span><a href="#slide-18" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/17.webp" alt="Equipment View 17"></div>
-            <div id="slide-18" class="gallery-slide"><div class="control-pad"><a href="#slide-17" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">18 / 30</span><a href="#slide-19" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/18.webp" alt="Equipment View 18"></div>
-            <div id="slide-19" class="gallery-slide"><div class="control-pad"><a href="#slide-18" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">19 / 30</span><a href="#slide-20" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/19.webp" alt="Equipment View 19"></div>
-            <div id="slide-20" class="gallery-slide"><div class="control-pad"><a href="#slide-19" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">20 / 30</span><a href="#slide-21" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/20.webp" alt="Equipment View 20"></div>
-            <div id="slide-21" class="gallery-slide"><div class="control-pad"><a href="#slide-20" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">21 / 30</span><a href="#slide-22" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Equipment View 21"></div>
-            <div id="slide-22" class="gallery-slide"><div class="control-pad"><a href="#slide-21" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">22 / 30</span><a href="#slide-23" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Equipment View 22"></div>
-            <div id="slide-23" class="gallery-slide"><div class="control-pad"><a href="#slide-22" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">23 / 30</span><a href="#slide-24" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="Equipment View 23"></div>
-            <div id="slide-24" class="gallery-slide"><div class="control-pad"><a href="#slide-23" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">24 / 30</span><a href="#slide-25" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="Equipment View 24"></div>
-            <div id="slide-25" class="gallery-slide"><div class="control-pad"><a href="#slide-24" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">25 / 30</span><a href="#slide-26" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="Equipment View 25"></div>
-            <div id="slide-26" class="gallery-slide"><div class="control-pad"><a href="#slide-25" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">26 / 30</span><a href="#slide-27" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="Equipment View 26"></div>
-            <div id="slide-27" class="gallery-slide"><div class="control-pad"><a href="#slide-26" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">27 / 30</span><a href="#slide-28" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Equipment View 27"></div>
-            <div id="slide-28" class="gallery-slide"><div class="control-pad"><a href="#slide-27" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">28 / 30</span><a href="#slide-29" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Equipment View 28"></div>
-            <div id="slide-29" class="gallery-slide"><div class="control-pad"><a href="#slide-28" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">29 / 30</span><a href="#slide-30" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Equipment View 29"></div>
-            <div id="slide-30" class="gallery-slide">
-                <div class="control-pad"><a href="#slide-29" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">30 / 30</span><a href="#slide-1" class="nav-arrow next-arrow">&#10095;</a></div>
-                <img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Equipment View 30">
-            </div>
+            <!-- PAGE 1 SLIDES (1 - 10) -->
+            <div id="slide-1" class="gallery-slide"><div class="control-pad"><a href="#slide-30" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">1 / 30</span><a href="#slide-2" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="View 1"></div>
+            <div id="slide-2" class="gallery-slide"><div class="control-pad"><a href="#slide-1" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">2 / 30</span><a href="#slide-3" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="View 2"></div>
+            <div id="slide-3" class="gallery-slide"><div class="control-pad"><a href="#slide-2" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">3 / 30</span><a href="#slide-4" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="View 3"></div>
+            <div id="slide-4" class="gallery-slide"><div class="control-pad"><a href="#slide-3" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">4 / 30</span><a href="#slide-5" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="View 4"></div>
+            <div id="slide-5" class="gallery-slide"><div class="control-pad"><a href="#slide-4" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">5 / 30</span><a href="#slide-6" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="View 5"></div>
+            <div id="slide-6" class="gallery-slide"><div class="control-pad"><a href="#slide-5" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">6 / 30</span><a href="#slide-7" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="View 6"></div>
+            <div id="slide-7" class="gallery-slide"><div class="control-pad"><a href="#slide-6" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">7 / 30</span><a href="#slide-8" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="View 7"></div>
+            <div id="slide-8" class="gallery-slide"><div class="control-pad"><a href="#slide-7" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">8 / 30</span><a href="#slide-9" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="View 8"></div>
+            <div id="slide-9" class="gallery-slide"><div class="control-pad"><a href="#slide-8" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">9 / 30</span><a href="#slide-10" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="View 9"></div>
+            <div id="slide-10" class="gallery-slide"><div class="control-pad"><a href="#slide-9" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">10 / 30</span><a href="#slide-11" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="View 10"></div>
+
+            <!-- PAGE 2 SLIDES (11 - 20) -->
+            <div id="slide-11" class="gallery-slide"><div class="control-pad"><a href="#slide-10" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">11 / 30</span><a href="#slide-12" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="View 11"></div>
+            <div id="slide-12" class="gallery-slide"><div class="control-pad"><a href="#slide-11" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">12 / 30</span><a href="#slide-13" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="View 12"></div>
+            <div id="slide-13" class="gallery-slide"><div class="control-pad"><a href="#slide-12" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">13 / 30</span><a href="#slide-14" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/13.webp" alt="View 13"></div>
+            <div id="slide-14" class="gallery-slide"><div class="control-pad"><a href="#slide-13" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">14 / 30</span><a href="#slide-15" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/14.webp" alt="View 14"></div>
+            <div id="slide-15" class="gallery-slide"><div class="control-pad"><a href="#slide-14" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">15 / 30</span><a href="#slide-16" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="View 15"></div>
+            <div id="slide-16" class="gallery-slide"><div class="control-pad"><a href="#slide-15" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">16 / 30</span><a href="#slide-17" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/16.webp" alt="View 16"></div>
+            <div id="slide-17" class="gallery-slide"><div class="control-pad"><a href="#slide-16" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">17 / 30</span><a href="#slide-18" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/17.webp" alt="View 17"></div>
+            <div id="slide-18" class="gallery-slide"><div class="control-pad"><a href="#slide-17" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">18 / 30</span><a href="#slide-19" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/18.webp" alt="View 18"></div>
+            <div id="slide-19" class="gallery-slide"><div class="control-pad"><a href="#slide-18" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">19 / 30</span><a href="#slide-20" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/19.webp" alt="View 19"></div>
+            <div id="slide-20" class="gallery-slide"><div class="control-pad"><a href="#slide-19" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">20 / 30</span><a href="#slide-21" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/20.webp" alt="View 20"></div>
+
+            <!-- PAGE 3 SLIDES (21 - 30) -->
+            <div id="slide-21" class="gallery-slide"><div class="control-pad"><a href="#slide-20" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">21 / 30</span><a href="#slide-22" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="View 21"></div>
+            <div id="slide-22" class="gallery-slide"><div class="control-pad"><a href="#slide-21" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">22 / 30</span><a href="#slide-23" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="View 22"></div>
+            <div id="slide-23" class="gallery-slide"><div class="control-pad"><a href="#slide-22" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">23 / 30</span><a href="#slide-24" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="View 23"></div>
+            <div id="slide-24" class="gallery-slide"><div class="control-pad"><a href="#slide-23" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">24 / 30</span><a href="#slide-25" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="View 24"></div>
+            <div id="slide-25" class="gallery-slide"><div class="control-pad"><a href="#slide-24" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">25 / 30</span><a href="#slide-26" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="View 25"></div>
+            <div id="slide-26" class="gallery-slide"><div class="control-pad"><a href="#slide-25" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">26 / 30</span><a href="#slide-27" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="View 26"></div>
+            <div id="slide-27" class="gallery-slide"><div class="control-pad"><a href="#slide-26" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">27 / 30</span><a href="#slide-28" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="View 27"></div>
+            <div id="slide-28" class="gallery-slide"><div class="control-pad"><a href="#slide-27" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">28 / 30</span><a href="#slide-29" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="View 28"></div>
+            <div id="slide-29" class="gallery-slide"><div class="control-pad"><a href="#slide-28" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">29 / 30</span><a href="#slide-30" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="View 29"></div>
+            <div id="slide-30" class="gallery-slide"><div class="control-pad"><a href="#slide-29" class="nav-arrow prev-arrow">&#10094;</a><span class="slide-indicator">30 / 30</span><a href="#slide-1" class="nav-arrow next-arrow">&#10095;</a></div><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="View 30"></div>
         </div>
 
-        <!-- THUMBNAIL PANEL — now driven by the same #slide-N targets above,
-             so it always stays synced with whichever image is showing,
-             whether you clicked a thumbnail or the big image arrows. -->
+        <!-- THUMBNAIL BOTTOM NAVIGATION PANEL -->
         <div class="thumbnail-panel-outer">
             <span class="btn-left-wrapper">
                 <a href="#slide-1" id="prev-to-p1" class="panel-nav-btn btn-left">&#10094;</a>
-                <a href="#slide-10" id="prev-to-p2" class="panel-nav-btn btn-left">&#10094;</a>
+                <a href="#slide-11" id="prev-to-p2" class="panel-nav-btn btn-left">&#10094;</a>
             </span>
 
             <div class="thumbnail-scroller-track">
+                <!-- Page 1 -->
                 <div id="thumb-page-1" class="thumb-group-page">
-                    <a href="#slide-1" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Thumb 1"></a>
-                    <a href="#slide-2" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Thumb 2"></a>
-                    <a href="#slide-3" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="Thumb 3"></a>
-                    <a href="#slide-4" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="Thumb 4"></a>
-                    <a href="#slide-5" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="Thumb 5"></a>
-                    <a href="#slide-6" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="Thumb 6"></a>
-                    <a href="#slide-7" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Thumb 7"></a>
-                    <a href="#slide-8" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Thumb 8"></a>
-                    <a href="#slide-9" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Thumb 9"></a>
-                    <a href="#slide-10" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Thumb 10"></a>
+                    <a href="#slide-1" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="T1"></a>
+                    <a href="#slide-2" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="T2"></a>
+                    <a href="#slide-3" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="T3"></a>
+                    <a href="#slide-4" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="T4"></a>
+                    <a href="#slide-5" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="T5"></a>
+                    <a href="#slide-6" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="T6"></a>
+                    <a href="#slide-7" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="T7"></a>
+                    <a href="#slide-8" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="T8"></a>
+                    <a href="#slide-9" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="T9"></a>
+                    <a href="#slide-10" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="T10"></a>
                 </div>
+                <!-- Page 2 -->
                 <div id="thumb-page-2" class="thumb-group-page">
-                    <a href="#slide-11" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="Thumb 11"></a>
-                    <a href="#slide-12" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="Thumb 12"></a>
-                    <a href="#slide-13" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/13.webp" alt="Thumb 13"></a>
-                    <a href="#slide-14" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/14.webp" alt="Thumb 14"></a>
-                    <a href="#slide-15" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="Thumb 15"></a>
-                    <a href="#slide-16" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/16.webp" alt="Thumb 16"></a>
-                    <a href="#slide-17" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/17.webp" alt="Thumb 17"></a>
-                    <a href="#slide-18" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/18.webp" alt="Thumb 18"></a>
-                    <a href="#slide-19" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/19.webp" alt="Thumb 19"></a>
-                    <a href="#slide-20" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/20.webp" alt="Thumb 20"></a>
+                    <a href="#slide-11" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/11.webp" alt="T11"></a>
+                    <a href="#slide-12" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/12.webp" alt="T12"></a>
+                    <a href="#slide-13" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/13.webp" alt="T13"></a>
+                    <a href="#slide-14" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/14.webp" alt="T14"></a>
+                    <a href="#slide-15" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/15.webp" alt="T15"></a>
+                    <a href="#slide-16" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/16.webp" alt="T16"></a>
+                    <a href="#slide-17" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/17.webp" alt="T17"></a>
+                    <a href="#slide-18" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/18.webp" alt="T18"></a>
+                    <a href="#slide-19" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/19.webp" alt="T19"></a>
+                    <a href="#slide-20" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/20.webp" alt="T20"></a>
                 </div>
+                <!-- Page 3 -->
                 <div id="thumb-page-3" class="thumb-group-page">
-                    <a href="#slide-21" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="Thumb 21"></a>
-                    <a href="#slide-22" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="Thumb 22"></a>
-                    <a href="#slide-23" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="Thumb 23"></a>
-                    <a href="#slide-24" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="Thumb 24"></a>
-                    <a href="#slide-25" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="Thumb 25"></a>
-                    <a href="#slide-26" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="Thumb 26"></a>
-                    <a href="#slide-27" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="Thumb 27"></a>
-                    <a href="#slide-28" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="Thumb 28"></a>
-                    <a href="#slide-29" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="Thumb 29"></a>
-                    <a href="#slide-30" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="Thumb 30"></a>
+                    <a href="#slide-21" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/01.webp" alt="T21"></a>
+                    <a href="#slide-22" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/02.webp" alt="T22"></a>
+                    <a href="#slide-23" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/03.webp" alt="T23"></a>
+                    <a href="#slide-24" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/04.webp" alt="T24"></a>
+                    <a href="#slide-25" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/05.webp" alt="T25"></a>
+                    <a href="#slide-26" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/06.webp" alt="T26"></a>
+                    <a href="#slide-27" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/07.webp" alt="T27"></a>
+                    <a href="#slide-28" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/08.webp" alt="T28"></a>
+                    <a href="#slide-29" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/09.webp" alt="T29"></a>
+                    <a href="#slide-30" class="thumb-link"><img src="https://img.miniexcavator.org/ebay/Website-Team/Pich/Ebay%20Template/10.webp" alt="T30"></a>
                 </div>
             </div>
 
             <span class="btn-right-wrapper">
                 <a href="#slide-11" id="next-to-p2" class="panel-nav-btn btn-right">&#10095;</a>
                 <a href="#slide-21" id="next-to-p3" class="panel-nav-btn btn-right">&#10095;</a>
+                <a href="#slide-30" id="next-to-final" class="panel-nav-btn btn-right">&#10095;</a>
             </span>
         </div>
-
     </div>
+</div>
+</div>
 </section>
 
   <!-- FEATURES -->
